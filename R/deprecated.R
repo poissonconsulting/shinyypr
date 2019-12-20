@@ -1,12 +1,12 @@
 #' Deprecated Functions
 #'
-#' Deprecated `pkgtemplate` functions.
+#' Deprecated `shinyypr` functions.
 #'
 #' @keywords internal
-#' @name pkgtemplate_deprecated
+#' @name shinyypr_deprecated
 NULL
 
-#' @describeIn pkgtemplate_deprecated Check Function Template
+#' @describeIn shinyypr_deprecated Check Function Template
 #'
 #' \lifecycle{soft-deprecated}
 #'

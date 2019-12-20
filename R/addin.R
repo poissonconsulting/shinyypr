@@ -1,3 +1,3 @@
-pkgtemplate_addin <- function() {
-  pkgtemplate::run_app()
+shinyypr_addin <- function() {
+  shinyypr::run_app()
 }

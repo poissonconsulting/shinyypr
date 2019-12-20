@@ -1,1 +1,1 @@
-pkgtemplate:::app_ui()
+shinyypr:::app_ui()
