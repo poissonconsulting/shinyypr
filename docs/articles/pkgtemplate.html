@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Using pkgtemplate • pkgtemplate</title>
+<title>Using shinyypr • pkgtemplate</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Using pkgtemplate">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Using shinyypr">
 <meta property="og:description" content="">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
@@ -80,7 +80,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Using pkgtemplate</h1>
+      <h1>Using shinyypr</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/pkgtemplate/blob/master/vignettes/pkgtemplate.Rmd"><code>vignettes/pkgtemplate.Rmd</code></a></small>
@@ -92,18 +92,18 @@
     
 <p>In order to create a new package the user should</p>
 <ol style="list-style-type: decimal">
-<li>Go to the pkgtemplate <a href="https://github.com/poissonconsulting/pkgtemplate">GitHub repository</a> and choose ‘Use this template’.</li>
-<li>Clone the new repository and replace ‘pkgtemplate’ with the name of the new package in <code>DESCRIPTION</code>, <code>NEWS.md</code>, <code>tests/testthat.R</code>, <code>vignettes/pkgtemplate.Rmd</code> and this <code>README.Rmd</code> file.</li>
+<li>Go to the shinyypr <a href="https://github.com/poissonconsulting/shinyypr">GitHub repository</a> and choose ‘Use this template’.</li>
+<li>Clone the new repository and replace ‘shinyypr’ with the name of the new package in <code>DESCRIPTION</code>, <code>NEWS.md</code>, <code>tests/testthat.R</code>, <code>vignettes/shinyypr.Rmd</code> and this <code>README.Rmd</code> file.</li>
 <li>
 <code><a href="https://rdrr.io/pkg/devtools/man/check.html">devtools::check()</a></code> the package and fix any Errors, Warnings or Notes.</li>
 <li>Knit this <code>README.Rmd</code> file and <code><a href="https://pkgdown.r-lib.org/reference/build_site.html">pkgdown::build_site()</a></code>.</li>
-<li>Add the project to <a href="https://www.travis-ci.com/poissonconsulting/pkgtemplate">Travis</a> and in the <a href="https://www.travis-ci.com/poissonconsulting/pkgtemplate/settings">Settings</a> add a Cron Job to run the master branch daily if there hasn’t been a build in the last 24h.</li>
-<li>Add the project to <a href="https://ci.appveyor.com/project/poissonconsulting/pkgtemplate">Appveyor</a>.</li>
-<li>Rename the <code>pkgtemplate.Rproj</code> and <code>vignettes/pkgtemplate.Rmd</code> files.</li>
+<li>Add the project to <a href="https://www.travis-ci.com/poissonconsulting/shinyypr">Travis</a> and in the <a href="https://www.travis-ci.com/poissonconsulting/shinyypr/settings">Settings</a> add a Cron Job to run the master branch daily if there hasn’t been a build in the last 24h.</li>
+<li>Add the project to <a href="https://ci.appveyor.com/project/poissonconsulting/shinyypr">Appveyor</a>.</li>
+<li>Rename the <code>shinyypr.Rproj</code> and <code>vignettes/shinyypr.Rmd</code> files.</li>
 <li>Push the changes to the new repository.</li>
-<li>Go to the repository GitHub <a href="https://github.com/poissonconsulting/pkgtemplate/settings">settings</a> and set the GitHub Pages Source to be the master branch /docs folder.</li>
-<li>Edit the GitHub repository <a href="https://github.com/poissonconsulting/pkgtemplate/">description</a> and set the website to be <a href="https://poissonconsulting.github.io/pkgtemplate/" class="uri">https://poissonconsulting.github.io/pkgtemplate/</a>.</li>
-<li>If you aren’t developing a Shiny app, run <code>pkgtemplate:::cannibalise_shiny(getwd())</code> to remove any Shiny-related files (make sure that getwd() points to the correct place!)</li>
+<li>Go to the repository GitHub <a href="https://github.com/poissonconsulting/shinyypr/settings">settings</a> and set the GitHub Pages Source to be the master branch /docs folder.</li>
+<li>Edit the GitHub repository <a href="https://github.com/poissonconsulting/shinyypr/">description</a> and set the website to be <a href="https://poissonconsulting.github.io/shinyypr/" class="uri">https://poissonconsulting.github.io/shinyypr/</a>.</li>
+<li>If you aren’t developing a Shiny app, run <code>shinyypr:::cannibalise_shiny(getwd())</code> to remove any Shiny-related files (make sure that getwd() points to the correct place!)</li>
 </ol>
 </div>
 
