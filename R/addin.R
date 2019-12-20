@@ -1,3 +1,3 @@
 shinyypr_addin <- function() {
-  shinyypr::run_app()
+  shinyypr::run_ypr_app()
 }
