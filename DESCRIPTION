@@ -13,7 +13,13 @@ Imports:
     chk,
     lifecycle,
     shiny,
-    ypr
+    ypr,
+    shinyjs,
+    dplyr,
+    shinyBS,
+    purrr,
+    readr,
+    ggplot2
 Suggests: 
     covr,
     testthat (>= 2.1.0),

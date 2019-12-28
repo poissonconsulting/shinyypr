@@ -23,7 +23,7 @@ mod_about_ui <- function(id) {
       br(),
       h5(
         "For more information about this app, see the ",
-        a("GitHub page.", href = "https://github.com/shinyypr/rems")
+        a("GitHub page.", href = "https://github.com/poissonconsulting/shinyypr")
       ),
       h6("Developed by Poisson Consulting.")
     ),

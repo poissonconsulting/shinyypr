@@ -2,13 +2,19 @@ app_ui <- function() {
   tagList(
     css_hide_errors(),
     css_navbar(),
+    tags$style(type="text/css",
+               ".shiny-output-error { visibility: hidden; }",
+               ".shiny-output-error:before { visibility: hidden; }"
+    ),
+    add_external_resources(),
+    shinyjs::useShinyjs(),
     navbarPage(
-      title = "Pkgtemplate",
-      selected = "Data",
+      title = "Yield per Recruit",
+      selected = "Analysis",
       tabPanel(
-        title = "Data",
+        title = "Analysis",
         br(),
-        mod_data_ui("data_ui_1")
+        mod_analysis_ui("analysis_ui_1")
       ),
       tabPanel(
         title = "About",
@@ -17,4 +23,9 @@ app_ui <- function() {
       )
     )
   )
+}
+
+add_external_resources <- function(){
+  addResourcePath('www', system.file('app/www', package = 'shinyypr'))
+  tagList(tags$link(rel="stylesheet", type="text/css", href="www/style.css"))
 }

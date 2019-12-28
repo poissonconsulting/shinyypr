@@ -1,3 +1,3 @@
-#' @import chk lifecycle
+#' @import chk lifecycle ypr
 #' @rawNamespace import(shiny, except = p)
 NULL
