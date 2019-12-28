@@ -3,5 +3,6 @@
 export(run_ypr_app)
 import(chk)
 import(lifecycle)
+import(magrittr)
 import(shiny, except = p)
 import(ypr)

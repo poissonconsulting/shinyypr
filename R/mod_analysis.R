@@ -7,6 +7,10 @@
 #' @param input internal
 #' @param output internal
 #' @param session internal
+#' 
+#' @rdname mod_analysis
+#'
+#' @keywords internal
 #'
 mod_analysis_ui <- function(id){
   ns <- NS(id)
@@ -196,6 +200,9 @@ mod_analysis_ui <- function(id){
 }
     
 # Module Server
+#' @rdname mod_analysis
+#'
+#' @keywords internal
     
 mod_analysis_server <- function(input, output, session){
   
@@ -309,10 +316,11 @@ mod_analysis_server <- function(input, output, session){
   
   table_parameters <- reactive({
     attributes %>%
-      dplyr::select(-Log) %>%
-      dplyr::mutate(Integer = if_else(Integer == 1, "Yes", "No"))  %>%
+      dplyr::select(-dplyr::.data$Log) %>%
+      dplyr::mutate(Integer = dplyr::if_else(dplyr::.data$Integer == 1, "Yes", "No"))  %>%
       dplyr::right_join(get_parameter_values(), "Parameter") %>%
-      dplyr::select(Parameter, Value, Description, Importance, everything()) 
+      dplyr::select(dplyr::.data$Parameter, dplyr::.data$Value, dplyr::.data$Description, 
+                    dplyr::.data$Importance, dplyr::everything()) 
   })
   
   ############### --------------- events --------------- ###############
@@ -343,10 +351,9 @@ mod_analysis_server <- function(input, output, session){
     if(class(params) == "NULL") {return()}
     attributes <- dplyr::left_join(attributes, params %>% 
                                      ypr::ypr_tabulate_parameters() %>%
-                                     dplyr::select(-Description), 'Parameter') %>%
-      mutate_if(is.factor, as.character)
-    print(attributes)
-    
+                                     dplyr::select(-dplyr::.data$Description), 'Parameter') %>%
+      dplyr::mutate_if(is.factor, as.character)
+
     attributes$subgroup <- attributes$Importance
     if(input$radioGrouping == "Category"){
       attributes$subgroup <- attributes$Subgrouping
@@ -376,7 +383,7 @@ mod_analysis_server <- function(input, output, session){
     if(click$state != "upload"){return()}
     check_file()
   })
-  observe({if(check_file() != "") {show("errorFile")} else {hide("errorFile")}})
+  observe({if(check_file() != "") {shinyjs::show("errorFile")} else {shinyjs::hide("errorFile")}})
   
   ######### yield
   check_yield <- reactive({

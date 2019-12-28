@@ -2,9 +2,12 @@
 % Please edit documentation in R/mod_analysis.R
 \name{mod_analysis_ui}
 \alias{mod_analysis_ui}
+\alias{mod_analysis_server}
 \title{mod_analysis_ui and mod_analysis_server}
 \usage{
 mod_analysis_ui(id)
+
+mod_analysis_server(input, output, session)
 }
 \arguments{
 \item{id}{shiny id}
@@ -18,3 +21,4 @@ mod_analysis_ui(id)
 \description{
 A shiny Module.
 }
+\keyword{internal}

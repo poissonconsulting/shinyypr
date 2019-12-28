@@ -13,12 +13,12 @@ attribute_to_subgroup <- function(attribute){
 
 subgroup_to_title <- function(attribute){
   attribute %>% 
-    dplyr::group_by(Grouping, subgroup) %>% 
+    dplyr::group_by(dplyr::.data$Grouping, dplyr::.data$subgroup) %>% 
     dplyr::summarise() %>%
-    dplyr::mutate(n = 1:n()) %>%
+    dplyr::mutate(n = 1:dplyr::n()) %>%
     dplyr::ungroup() %>%
-    dplyr::mutate(title = if_else(n == 1, Grouping, "")) %>%
-    dplyr::pull(title)
+    dplyr::mutate(title = dplyr::if_else(dplyr::.data$n == 1, dplyr::.data$Grouping, "")) %>%
+    dplyr::pull(dplyr::.data$title)
 }
 
 numeric_inputs <- function(subgroup){

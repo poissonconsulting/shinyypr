@@ -8,6 +8,8 @@ Authors@R: c(
     )
 Description: An R package to run the ypr Shiny app.
 License: MIT + file LICENSE
+Depends: 
+    R (>= 2.10)
 Imports:
     stats,
     chk,
@@ -19,7 +21,9 @@ Imports:
     shinyBS,
     purrr,
     readr,
-    ggplot2
+    ggplot2,
+    magrittr,
+    DT
 Suggests: 
     covr,
     testthat (>= 2.1.0),
