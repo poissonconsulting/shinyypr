@@ -58,7 +58,7 @@ mod_analysis_ui <- function(id){
                    div(class = 'param-title', HTML("Yield")),
                    splitLayout(
                      cellWidths = c("48%", "4%", "48%"),
-                     paramInput("Ly", value = 0),
+                     paramInput("Ly", value = 0, ns = ns),
                      div(),
                      # weird id with label* is to match other inputs for tooltips
                      div(div(id = ns('labelharvest'),

@@ -14,7 +14,32 @@ app_ui <- function() {
       tabPanel(
         title = "Analysis",
         br(),
-        mod_analysis_ui("analysis_ui_1")
+        tagList(
+          sidebarLayout(
+            sidebarPanel(width = 4, class = 'sidebar',
+                         mod_parameters_ui("parameters_ui_1")
+            ),
+            mainPanel(width = 8,
+                      tabsetPanel(selected = "Schedule",
+                                  tabPanel("Parameters",
+                                           mod_parameter_table_ui("parameter_table_ui_1")
+                                  ),
+                                  tabPanel("Schedule",
+                                          mod_schedule_ui("schedule_ui_1")
+                                  ),
+                                  tabPanel("Fish",
+                                           mod_fish_ui("fish_ui_1")
+                                  ),
+                                  tabPanel("Recruitment",
+                                           mod_recruitment_ui("recruitment_ui_1")
+                                  ),
+                                  tabPanel("Yield",
+                                           mod_yield_ui("yield_ui_1")
+                                           ),
+                                  tabPanel("Report",
+                                          mod_report_ui("report_ui_1")
+                                  )
+                      ))))
       ),
       tabPanel(
         title = "About",

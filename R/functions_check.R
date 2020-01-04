@@ -12,3 +12,11 @@ check_colnames <- function (x, colnames = character(0)) {
   if (!identical(sort(x_colnames), sort(colnames))) 
     err("x column names must include specified colnames")
 }
+
+check_yield_parameters <- function(population, Ly, harvest, biomass) {
+  ypr:::chk_population(population)
+  chk_range(Ly, c(0, Inf))
+  chk_flag(biomass)
+  chk_flag(harvest)
+  population
+}
