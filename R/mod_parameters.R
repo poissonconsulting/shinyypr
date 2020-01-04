@@ -243,7 +243,7 @@ mod_parameters_server <- function(input, output, session){
       parameter_values = get_parameter_values,
       harvest = reactive({input$harvest}),
       biomass = reactive({input$biomass}),
-      yield = reactive({input$ly})
+      yield = reactive({input$Ly})
     )
   )
 }
