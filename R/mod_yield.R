@@ -47,28 +47,28 @@ mod_yield_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_yield_server <- function(input, output, session){
+mod_yield_server <- function(input, output, session, params){
   ns <- session$ns
   
   plot_yield <- reactive({
-    ypr::ypr_plot_yield(get_population(), 
-                        Ly = as.numeric(input$Ly),
-                        harvest = input$harvest,
-                        biomass = input$biomass,
+    ypr::ypr_plot_yield(params$population(), 
+                        Ly = as.numeric(params$yield()),
+                        harvest = params$harvest(),
+                        biomass = params$biomass(),
                         input$yYield)
   })
   
   table_yield <- reactive({
-    ypr::ypr_tabulate_yield(get_population(), 
-                            Ly = as.numeric(input$Ly),
-                            harvest = input$harvest,
-                            biomass = input$biomass)
+    ypr::ypr_tabulate_yield(params$population(), 
+                            Ly = as.numeric(params$yield()),
+                            harvest = params$harvest(),
+                            biomass = params$biomass())
   })
   
   check_yield <- reactive({
     x <- try(check_yield_parameters(
       population = ypr::ypr_population(),
-      Ly = as.numeric(input$Ly),
+      Ly = as.numeric(params$Ly()),
       harvest = TRUE,
       biomass = TRUE
     ))

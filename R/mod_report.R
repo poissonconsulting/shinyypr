@@ -29,14 +29,14 @@ mod_report_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_report_server <- function(input, output, session){
+mod_report_server <- function(input, output, session, params){
   ns <- session$ns
   
   output$downloadReportHTML <- downloadHandler(
     filename = "ypr_report.html",
     content = function(file) {
       temp_report <- file.path(tempdir(), "report.Rmd")
-      ypr::ypr_report(get_population(), file = temp_report)
+      ypr::ypr_report(params$population(), file = temp_report)
       rmarkdown::render(temp_report, output_file = file)
     }
   )
@@ -44,7 +44,7 @@ mod_report_server <- function(input, output, session){
   output$downloadReportRmd <- downloadHandler(
     filename = function(){'ypr_report.Rmd'},
     content = function(file) {
-      ypr::ypr_report(get_population(), file = file)
+      ypr::ypr_report(params$population(), file = file)
     }
   )
 }

@@ -42,18 +42,18 @@ mod_recruitment_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_recruitment_server <- function(input, output, session){
+mod_recruitment_server <- function(input, output, session, params){
   ns <- session$ns
   
   plot_recruitment <- reactive({
-    ypr::ypr_plot_sr(get_population(), 
-                     Ly = as.numeric(input$Ly),
-                     harvest = input$harvest,
-                     biomass = input$biomass)
+    ypr::ypr_plot_sr(params$population(), 
+                     Ly = as.numeric(params$yield()),
+                     harvest = params$harvest(),
+                     biomass = params$biomass())
   })
   
   table_recruitment <- reactive({
-    ypr::ypr_tabulate_sr(get_population())
+    ypr::ypr_tabulate_sr(params$population())
   })
   
   

@@ -62,12 +62,12 @@ mod_fish_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_fish_server <- function(input, output, session){
+mod_fish_server <- function(input, output, session, params){
   ns <- session$ns
   
   plot_fish <- reactive({
     color <- if(input$color){"White"} else {NULL}
-    ypr::ypr_plot_fish(get_population(), 
+    ypr::ypr_plot_fish(params$population(), 
                        x = input$xFish,
                        y = input$yFish,
                        binwidth = input$binwidth,
@@ -75,7 +75,7 @@ mod_fish_server <- function(input, output, session){
   })
   
   table_fish <- reactive({
-    ypr::ypr_tabulate_fish(get_population(),
+    ypr::ypr_tabulate_fish(params$population(),
                            x = input$xFish,
                            binwidth = input$binwidth)
   })

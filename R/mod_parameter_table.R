@@ -40,12 +40,6 @@ mod_parameter_table_server <- function(input, output, session, params){
     attributes <- attributes %>% dplyr::right_join(parameter_values, "Parameter")
     attributes <- attributes[c(first, setdiff(names(attributes), first))]
     attributes
-    # attributes %>%
-    #   dplyr::select(Log) %>%
-    #   dplyr::mutate(Integer = dplyr::if_else(dplyr::.data$Integer == 1, "Yes", "No"))  %>%
-    #   dplyr::right_join(parameter_values, "Parameter") %>%
-    #   dplyr::select(dplyr::.data$Parameter, dplyr::.data$Value, dplyr::.data$Description, 
-    #                 dplyr::.data$Importance, dplyr::everything()) 
   })
   
   output$tableParameters <- DT::renderDataTable({

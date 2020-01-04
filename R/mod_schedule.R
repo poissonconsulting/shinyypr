@@ -54,16 +54,16 @@ mod_schedule_ui <- function(id){
 #' @export
 #' @keywords internal
     
-mod_schedule_server <- function(input, output, session){
+mod_schedule_server <- function(input, output, session, params){
   ns <- session$ns
   
   get_schedule <- reactive({
-    ypr::ypr_schedule(population = get_population())
+    ypr::ypr_schedule(population = params$population())
   })
   
   plot_schedule <- reactive({
-    if(check_population() != ""){return()}
-    ypr::ypr_plot_schedule(get_population(), x = input$xSchedule, y = input$ySchedule)
+    # if(check_population() != ""){return()}
+    ypr::ypr_plot_schedule(params$population(), x = input$xSchedule, y = input$ySchedule)
   })
   
   table_schedule <- reactive({
