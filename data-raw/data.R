@@ -32,7 +32,7 @@ datasets <- map2_dfr(datasets$Item, datasets$Title, function(a, b){
   }
 })
 
-fish.y <- c("Surviving", "Spawning", "Caught", "Harvested", "Released", "HandlingMortality")
+fish.y <- c("Survivors", "Spawners", "Caught", "Harvested", "Released", "HandlingMortalities")
 fish.x <- c('Age', 'Length', 'Weight')
 
 usethis::use_data(params, attributes, template, desc, schedule, 
