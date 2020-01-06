@@ -11,8 +11,6 @@
 #' @rdname mod_fish
 #'
 #' @keywords internal
-#' @export 
-#' @importFrom shiny NS tagList 
 mod_fish_ui <- function(id){
   ns <- NS(id)
   tagList(
@@ -59,7 +57,6 @@ mod_fish_ui <- function(id){
 # Module Server
     
 #' @rdname mod_fish
-#' @export
 #' @keywords internal
     
 mod_fish_server <- function(input, output, session, params){

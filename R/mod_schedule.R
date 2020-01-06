@@ -11,8 +11,6 @@
 #' @rdname mod_schedule
 #'
 #' @keywords internal
-#' @export 
-#' @importFrom shiny NS tagList 
 mod_schedule_ui <- function(id){
   ns <- NS(id)
   tagList(
@@ -51,7 +49,6 @@ mod_schedule_ui <- function(id){
 # Module Server
     
 #' @rdname mod_schedule
-#' @export
 #' @keywords internal
     
 mod_schedule_server <- function(input, output, session, params){

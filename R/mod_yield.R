@@ -11,8 +11,6 @@
 #' @rdname mod_yield
 #'
 #' @keywords internal
-#' @export 
-#' @importFrom shiny NS tagList 
 mod_yield_ui <- function(id){
   ns <- NS(id)
   tagList(
@@ -44,7 +42,6 @@ mod_yield_ui <- function(id){
 # Module Server
     
 #' @rdname mod_yield
-#' @export
 #' @keywords internal
     
 mod_yield_server <- function(input, output, session, params){

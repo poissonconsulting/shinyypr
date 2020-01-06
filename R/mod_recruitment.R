@@ -11,8 +11,6 @@
 #' @rdname mod_recruitment
 #'
 #' @keywords internal
-#' @export 
-#' @importFrom shiny NS tagList 
 mod_recruitment_ui <- function(id){
   ns <- NS(id)
   tagList(
@@ -39,7 +37,6 @@ mod_recruitment_ui <- function(id){
 # Module Server
     
 #' @rdname mod_recruitment
-#' @export
 #' @keywords internal
     
 mod_recruitment_server <- function(input, output, session, params){
