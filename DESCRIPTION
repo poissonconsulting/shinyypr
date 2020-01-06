@@ -23,7 +23,8 @@ Imports:
     readr,
     ggplot2,
     magrittr,
-    DT
+    DT,
+    bsplus
 Suggests: 
     covr,
     testthat (>= 2.1.0),

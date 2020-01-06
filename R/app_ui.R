@@ -2,6 +2,7 @@ app_ui <- function() {
   tagList(
     css_hide_errors(),
     css_navbar(),
+    bsplus::use_bs_tooltip(),
     tags$style(type="text/css",
                ".shiny-output-error { visibility: hidden; }",
                ".shiny-output-error:before { visibility: hidden; }"

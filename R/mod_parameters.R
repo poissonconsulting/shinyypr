@@ -15,6 +15,8 @@ mod_parameters_ui <- function(id){
   ns <- NS(id)
   tagList(
     div(id = ns('controlTab'),
+        # numericInput(ns("hi"), "hi", value = 0) %>%
+        #   bsplus::bs_embed_tooltip("ok fine then"),
         shiny::p("Autofill parameter values:", class = 'param-title2'), 
         actionLink(ns('linkUpload'), "1. Upload a csv"),
         shinyjs::hidden(div(id = ns('divUpload'),
@@ -60,7 +62,6 @@ mod_parameters_ui <- function(id){
     
 #' @rdname mod_parameters
 #' @keywords internal
-    
 mod_parameters_server <- function(input, output, session){
   ns <- session$ns
   
