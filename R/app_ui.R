@@ -11,7 +11,12 @@ app_ui <- function() {
     shinyjs::useShinyjs(),
     navbarPage(
       title = "Yield per Recruit",
-      selected = "Analysis",
+      selected = "Analysis", id = "navbar",
+      tabPanel(
+        title = "About",
+        br(),
+        mod_about_ui("about_ui_1")
+      ),
       tabPanel(
         title = "Analysis",
         br(),
@@ -36,16 +41,11 @@ app_ui <- function() {
                                   ),
                                   tabPanel("Yield",
                                            mod_yield_ui("yield_ui_1")
-                                           ),
-                                  tabPanel("Report",
-                                          mod_report_ui("report_ui_1")
-                                  )
+                                           )
                       ))))
       ),
-      tabPanel(
-        title = "About",
-        br(),
-        mod_about_ui("about_ui_1")
+      tabPanel("Report",
+               mod_report_ui("report_ui_1")
       )
     )
   )

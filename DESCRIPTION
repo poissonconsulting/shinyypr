@@ -24,7 +24,8 @@ Imports:
     ggplot2,
     magrittr,
     DT,
-    bsplus
+    bsplus,
+    waiter
 Suggests: 
     covr,
     testthat (>= 2.1.0),
