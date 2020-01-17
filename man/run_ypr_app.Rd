@@ -4,7 +4,10 @@
 \alias{run_ypr_app}
 \title{Run Shiny Application}
 \usage{
-run_ypr_app()
+run_ypr_app(population = NULL)
+}
+\arguments{
+\item{population}{A ypr population object}
 }
 \description{
 Run Shiny Application

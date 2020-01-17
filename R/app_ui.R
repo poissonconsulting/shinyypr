@@ -36,6 +36,9 @@ app_ui <- function() {
                                   tabPanel("Fish",
                                            mod_fish_ui("fish_ui_1")
                                   ),
+                                  tabPanel("Biomass",
+                                           mod_biomass_ui("biomass_ui_1")
+                                  ),
                                   tabPanel("Recruitment",
                                            mod_recruitment_ui("recruitment_ui_1")
                                   ),
