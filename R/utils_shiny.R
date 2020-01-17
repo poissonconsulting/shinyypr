@@ -1,24 +1,3 @@
-alter_file <- function(file, pattern) {
-  lines <- readLines(file)
-  lines <- lines[!lines == pattern]
-  writeLines(lines, file)
-  invisible(TRUE)
-}
-
-cannibalise_shiny <- function(root = getwd()) {
-  unlink(file.path(root, "R/app_server.R"))
-  unlink(file.path(root, "R/app_ui.R"))
-  unlink(file.path(root, "R/run_app.R"))
-  unlink(file.path(root, "R/utils_shiny.R"))
-  unlink(file.path(root, "R/mod_about.R"))
-  unlink(file.path(root, "R/mod_data.R"))
-  unlink(file.path(root, "R/addin.R"))
-  unlink(file.path(root, "inst"))
-  unlink(file.path(root, "tests/testthat/test-shiny.R"))
-  alter_file(file.path(root, "R/namespace.R"), "#' @rawNamespace import(shiny, except = p)")
-  alter_file(file.path(root, "DESCRIPTION"), "    shiny")
-}
-
 txt_input <- function(..., width = "100%") shiny::textInput(..., width = width)
 
 button <- function(..., class = "btn-primary") actionButton(..., class = class)
