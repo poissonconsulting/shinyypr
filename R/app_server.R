@@ -7,7 +7,6 @@ app_server <- function(input, output, session) {
   callModule(mod_fish_server, "fish_ui_1", params)
   callModule(mod_recruitment_server, "recruitment_ui_1", params)
   callModule(mod_yield_server, "yield_ui_1", params)
-  observe({print(input$navbar)})
   observe({
     if(input$navbar == "Report"){
       callModule(mod_report_server, "report_ui_1", params)

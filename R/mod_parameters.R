@@ -63,6 +63,8 @@ mod_parameters_ui <- function(id){
 mod_parameters_server <- function(input, output, session){
   ns <- session$ns
   
+  population <- getShinyOption("population", NULL)
+
   shinyjs::onclick('linkUpload', toggle2('divUpload'))
   shinyjs::onclick('linkSelect', toggle2('divSelect'))
   shinyjs::onclick('linkParameterOptions', toggle2('divParameterOptions'))
@@ -110,7 +112,17 @@ mod_parameters_server <- function(input, output, session){
     population
   })
   
+  observe({
+    if(!is.null(population)){
+      click$state <- "user"
+    }
+  })
   get_defaults <- reactive({
+    if(click$state == "user"){
+      return({
+        population
+      })
+    }
     if(click$state == 'upload'){
       return({
         if(check_file() != ""){return()}
