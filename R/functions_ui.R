@@ -14,19 +14,6 @@ attribute_to_subgroup <- function(attribute) {
   Filter(function(x) nrow(x) > 0, subgroups)
 }
 
-numeric_inputs <- function(subgroup, ns) {
-  purrr::pmap(
-    list(
-      subgroup$Parameter, subgroup$Lower,
-      subgroup$Upper, subgroup$Value, subgroup$Description
-    ),
-    function(a, b, c, d, e) {
-      numericInput(ns(a), label = a, min = b, max = c, value = d) %>%
-        bsplus::bs_embed_tooltip(e)
-    }
-  )
-}
-
 param_ui <- function(attributes, ns) {
   attributes <- dplyr::left_join(attributes, desc, "Parameter")
   subgroups <- attribute_to_subgroup(attributes)

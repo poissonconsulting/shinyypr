@@ -1,25 +1,23 @@
-check_intersection <- function(x, y) {
-  if (length(setdiff(x, y))) {
-    err("y must contain all elements in x")
+check_parameters <- function(x) {
+  y <- setdiff(x[["Parameter"]], ypr:::.parameters$Parameter)
+  if (length(y)) {
+    abort_chk(paste("The following parameter%s %r unrecognised:", 
+                    cc(y, conj = " and ")), n = length(y), tidy = TRUE)
   }
   invisible(x)
 }
 
-check_colnames <- function(x, colnames = character(0)) {
-  names(colnames) <- NULL
-  x_colnames <- colnames(x)
-  if (is.null(x_colnames)) {
-    err("x must have column names")
+check_colnames <- function(x) {
+  if (!identical(sort(colnames(x)), sort(c("Parameter", "Value")))) {
+    abort_chk("Column names in uploaded data must be 'Parameter' and 'Value'.")
   }
-  if (!identical(sort(x_colnames), sort(colnames))) {
-    err("x column names must include specified colnames")
-  }
+  invisible(x)
 }
 
-check_yield_parameters <- function(population, Ly, harvest, biomass) {
-  ypr:::chk_population(population)
+check_yield_parameters <- function(x, Ly = 1, harvest = TRUE, biomass = TRUE) {
+  ypr:::chk_population(x)
   chk_range(Ly, c(0, Inf))
   chk_flag(biomass)
   chk_flag(harvest)
-  population
+  invisible(x)
 }

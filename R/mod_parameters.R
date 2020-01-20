@@ -189,8 +189,8 @@ mod_parameters_server <- function(input, output, session) {
     req(input$uploadData)
     data <- read_file()
     x <- try({
-      check_colnames(data, colnames = c("Parameter", "Value"))
-      check_intersection(ypr:::.parameters$Parameter, data$Parameter)
+      check_colnames(data)
+      check_parameters(data)
     })
     if (inherits(x, "try-error")) {
       return({

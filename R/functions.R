@@ -1,4 +1,3 @@
-
 toggle2 <- function(...) {
   shinyjs::toggle(..., anim = TRUE, animType = "slide", time = 0.2)
 }
