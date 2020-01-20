@@ -16,46 +16,44 @@ knitr::opts_chunk$set(
 # shinyypr <img src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/##maturing)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/`#maturing)
 [![Travis build status](https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master)](https://travis-ci.com/poissonconsulting/shinyypr)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/shinyypr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/shinyypr)
 [![Codecov test coverage](https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/shinyypr?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/shinyypr)](https://CRAN.R-project.org/package=shinyypr) -->
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr) -->
-<!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr) -->
+[![CRAN status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
 <!-- badges: end -->
 
 shinyypr provides a function to run a Shiny app built on the ypr R package.
 
 ## Installation
 
-<!-- To install the latest release from [CRAN](https://cran.r-project.org) -->
+To install the latest release from [CRAN](https://cran.r-project.org)
 ```{r, eval=FALSE, echo=FALSE}
 install.packages("shinyypr")
 ```
 
 To install the developmental version from [GitHub](https://github.com/poissonconsulting/shinyypr)
 ```{r, eval=FALSE}
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("poissonconsulting/shinyypr")
 ```
 
 To install the latest developmental release from the Poisson drat [repository](https://github.com/poissonconsulting/drat)
 ```{r, eval=FALSE}
-# install.packages("drat")
+install.packages("drat")
 drat::addRepo("poissonconsulting")
 install.packages("shinyypr")
 ```
 
 ## Demonstration
-The function `run_ypr_app()` has a single argument, `population` which can be used to pass 
-a valid ypr_population object to automatically fill in app the parameters. Running the app with default argument will simply open the app and populate parameters with their defaults.
 ```{r, eval=FALSE}
-### run with default arguments
+### run app with default parameter settings
 shinyypr::run_ypr_app()
 
-### pass a ypr_population object
+### provide parameter settings by passing a ypr_population object to the run_ypr_app function
 adams <- ypr::adams_bt_03
 adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
 shinyypr::run_ypr_app(adams_adjusted)

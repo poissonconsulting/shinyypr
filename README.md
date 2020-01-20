@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/%60#maturing)
 [![Travis build
 status](https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master)](https://travis-ci.com/poissonconsulting/shinyypr)
 [![AppVeyor build
@@ -16,8 +16,9 @@ coverage](https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/b
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/shinyypr)](https://CRAN.R-project.org/package=shinyypr) -->
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr) -->
-<!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr) -->
+[![CRAN
+status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr)
+![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
 <!-- badges: end -->
 
 shinyypr provides a function to run a Shiny app built on the ypr R
@@ -46,16 +47,11 @@ install.packages("shinyypr")
 
 ## Demonstration
 
-The function `run_ypr_app()` has a single argument, `population` which
-can be used to pass a valid ypr\_population object to automatically fill
-in app the parameters. Running the app with default argument will simply
-open the app and populate parameters with their defaults.
-
 ``` r
-### run with default arguments
+### run app with default parameter settings
 shinyypr::run_ypr_app()
 
-### pass a ypr_population object
+### provide parameter settings by passing a ypr_population object to the run_ypr_app function
 adams <- ypr::adams_bt_03
 adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
 shinyypr::run_ypr_app(adams_adjusted)
