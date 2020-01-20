@@ -20,10 +20,8 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 <!-- ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr) -->
 <!-- badges: end -->
 
-shinyypr provides a template for a new R package.
-
-It includes useful internal
-functions.
+shinyypr provides a function to run a Shiny app built on the ypr R
+package.
 
 ## Installation
 
@@ -48,15 +46,19 @@ install.packages("shinyypr")
 
 ## Demonstration
 
-In order to create a new package the user should go to the shinyypr
-[GitHub repository](https://github.com/poissonconsulting/shinyypr)
-and choose ‘Use this template’.
-
-shinyypr includes files used for development of Shiny applications.
-To remove these from the repository, run:
+The function `run_ypr_app()` has a single argument, `population` which
+can be used to pass a valid ypr\_population object to automatically fill
+in app the parameters. Running the app with default argument will simply
+open the app and populate parameters with their defaults.
 
 ``` r
-shinyypr:::cannibalise_shiny(getwd())
+### run with default arguments
+shinyypr::run_ypr_app()
+
+### pass a ypr_population object
+adams <- ypr::adams_bt_03
+adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
+shinyypr::run_ypr_app(adams_adjusted)
 ```
 
 ## Information
@@ -70,8 +72,8 @@ vignette.
 Please report any
 [issues](https://github.com/poissonconsulting/shinyypr/issues).
 
-[Pull requests](https://github.com/poissonconsulting/shinyypr/pulls)
-are always welcome.
+[Pull requests](https://github.com/poissonconsulting/shinyypr/pulls) are
+always welcome.
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://github.com/poissonconsulting/shinyypr/blob/master/CODE_OF_CONDUCT.md).

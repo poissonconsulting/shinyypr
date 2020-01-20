@@ -2,5 +2,5 @@ pandoc: '2.4'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
-  pkgtemplate: pkgtemplate.html
+  shinyypr: shinyypr.html
 
