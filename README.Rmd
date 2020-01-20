@@ -26,7 +26,8 @@ knitr::opts_chunk$set(
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
 <!-- badges: end -->
 
-shinyypr provides a function to run a Shiny app built on the ypr R package.
+## Introduction
+shinyypr is an R package that provides a user interface to the [ypr](https://github.com/poissonconsulting/ypr) R package. [ypr](https://github.com/poissonconsulting/ypr) implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.
 
 ## Installation
 

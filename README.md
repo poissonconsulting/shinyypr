@@ -21,18 +21,23 @@ status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.o
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
 <!-- badges: end -->
 
-shinyypr provides a function to run a Shiny app built on the ypr R
-package.
+## Introduction
+
+shinyypr is an R package that provides a user interface to the
+[ypr](https://github.com/poissonconsulting/ypr) R package.
+[ypr](https://github.com/poissonconsulting/ypr) implements
+equilibrium-based yield per recruit methods for estimating the optimal
+yield for a fish population.
 
 ## Installation
 
-<!-- To install the latest release from [CRAN](https://cran.r-project.org) -->
+To install the latest release from [CRAN](https://cran.r-project.org)
 
 To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/shinyypr)
 
 ``` r
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("poissonconsulting/shinyypr")
 ```
 
@@ -40,7 +45,7 @@ To install the latest developmental release from the Poisson drat
 [repository](https://github.com/poissonconsulting/drat)
 
 ``` r
-# install.packages("drat")
+install.packages("drat")
 drat::addRepo("poissonconsulting")
 install.packages("shinyypr")
 ```

@@ -8,7 +8,7 @@ test_that("file upload checks work", {
   y$Parameter[y$Parameter == "Rk"] <- "Rko"
   testthat::expect_error(check_parameters(y), "The following parameters are unrecognised: 'tma' and 'Rko'.", class = "chk_error")
   testthat::expect_identical(check_parameters(x), x)
-  
+
   colnames(y) <- c("param", "Value")
   testthat::expect_error(check_colnames(y), "Column names in uploaded data must be 'Parameter' and 'Value'.", class = "chk_error")
   testthat::expect_identical(check_colnames(x), x)

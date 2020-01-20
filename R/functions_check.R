@@ -1,8 +1,10 @@
 check_parameters <- function(x) {
   y <- setdiff(x[["Parameter"]], ypr:::.parameters$Parameter)
   if (length(y)) {
-    abort_chk(paste("The following parameter%s %r unrecognised:", 
-                    cc(y, conj = " and ")), n = length(y), tidy = TRUE)
+    abort_chk(paste(
+      "The following parameter%s %r unrecognised:",
+      cc(y, conj = " and ")
+    ), n = length(y), tidy = TRUE)
   }
   invisible(x)
 }

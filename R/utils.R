@@ -48,5 +48,3 @@ sum2intswrap <- function(x, y) {
     sum[!is_na & sum > .max_integer] %% -.max_integer
   as.integer(sum)
 }
-
-
