@@ -82,18 +82,6 @@ mod_parameters_server <- function(input, output, session) {
   shinyjs::onclick("linkSelect", toggle2("divSelect"))
   shinyjs::onclick("linkParameterOptions", toggle2("divParameterOptions"))
 
-  observeEvent(input$selectGrouping, {
-    output$uiTooltip <- renderUI({
-      lapply(1:nrow(desc), function(x) {
-        shinyBS::bsTooltip(ns(paste0("label", desc$Parameter[x])),
-          desc$Description[x],
-          placement = "bottom", trigger = "hover",
-          options = NULL
-        )
-      })
-    })
-  })
-
   observe({
     if (click$state == "default") {
       updateSelectInput(session, "selectData", selected = "")

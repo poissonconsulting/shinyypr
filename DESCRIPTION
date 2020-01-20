@@ -18,7 +18,6 @@ Imports:
     ypr,
     shinyjs,
     dplyr,
-    shinyBS,
     purrr,
     readr,
     ggplot2,
