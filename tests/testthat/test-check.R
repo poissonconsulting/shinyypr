@@ -12,4 +12,10 @@ test_that("file upload checks work", {
   colnames(y) <- c("param", "Value")
   testthat::expect_error(chk_colnames(y), "Column names in uploaded data must be 'Parameter' and 'Value'.", class = "chk_error")
   testthat::expect_identical(chk_colnames(x), x)
+  
+  expect_identical(chk_population(ypr::adams_bt_03), ypr::adams_bt_03)
+  expect_error(chk_parameters(tmax = 1.5), 
+               "`tmax` must inherit from S3 class 'integer'.",
+               class = "chk_error")
+  
 })

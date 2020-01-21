@@ -1,25 +1,9 @@
-txt_input <- function(..., width = "100%") shiny::textInput(..., width = width)
-
-button <- function(..., class = "btn-primary") actionButton(..., class = class)
-
-br2 <- function() tagList(br(), br())
-br3 <- function() tagList(br(), br(), br())
-
-help_text <- function(x) {
-  p(x, style = "font-size: 11px; color: grey;")
+toggle2 <- function(...) {
+  shinyjs::toggle(..., anim = TRUE, animType = "slide", time = 0.2)
 }
 
-select_input_x <- function(..., label = "Select sites:", choices, selected = choices[1]) {
-  selectizeInput(...,
-    multiple = TRUE, label = label,
-    choices = choices,
-    selected = selected,
-    options = list(
-      "plugins" = list("remove_button"),
-      "create" = TRUE,
-      "persist" = FALSE
-    )
-  )
+inline <- function(x) {
+  tags$div(style = "display:inline-block;", x)
 }
 
 css_add <- function(x) {
