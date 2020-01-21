@@ -16,9 +16,10 @@ chk_colnames <- function(x) {
   invisible(x)
 }
 
-chk_population <- function (x, x_name = NULL) {
-  if (is.null(x_name)) 
+chk_population <- function(x, x_name = NULL) {
+  if (is.null(x_name)) {
     x_name <- deparse_backtick_chk(substitute(x))
+  }
   chk_string(x_name, x_name = "x_name")
   chk_s3_class(x, "ypr_population", x_name = x_name)
   chk_named(x, x_name = x_name)
@@ -28,9 +29,9 @@ chk_population <- function (x, x_name = NULL) {
   x
 }
 
-chk_parameters <- function (tmax, k, Linf, t0, k2, Linf2, L2, Wb, Ls, Sp, es, 
-          tR, Rk, BH, fb, n, nL, Ln, Sm, pi, Lv, Vp, Llo, Lup, rho, 
-          Hm, Nc, Wa, fa, Rmax, q) {
+chk_parameters <- function(tmax, k, Linf, t0, k2, Linf2, L2, Wb, Ls, Sp, es,
+                           tR, Rk, BH, fb, n, nL, Ln, Sm, pi, Lv, Vp, Llo, Lup, rho,
+                           Hm, Nc, Wa, fa, Rmax, q) {
   chk_s3_class(tmax, "integer")
   chk_scalar(tmax)
   chk_not_any_na(tmax)
