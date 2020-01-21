@@ -75,32 +75,6 @@ mod_yield_server <- function(input, output, session, params) {
     )
   })
 
-  check_yield <- reactive({
-    x <- try(chk_yield_parameters(
-      ypr::ypr_population(),
-      Ly = as.numeric(params$Ly()),
-      harvest = TRUE,
-      biomass = TRUE
-    ))
-    if (inherits(x, "try-error")) {
-      return({
-        gsub("Error : ", "", x)
-      })
-    }
-    ""
-  })
-
-  output$errorYield <- renderUI({
-    check_yield()
-  })
-  observe({
-    if (check_yield() != "") {
-      shinyjs::show("errorYield")
-    } else {
-      shinyjs::hide("errorYield")
-    }
-  })
-
   output$plotYield <- renderPlot({
     plot_yield()
   })

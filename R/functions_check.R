@@ -16,14 +16,6 @@ chk_colnames <- function(x) {
   invisible(x)
 }
 
-chk_yield_parameters <- function(x, Ly = 1, harvest = TRUE, biomass = TRUE) {
-  chk_population(x)
-  chk_range(Ly, c(0, Inf))
-  chk_flag(biomass)
-  chk_flag(harvest)
-  invisible(x)
-}
-
 chk_population <- function (x, x_name = NULL) {
   if (is.null(x_name)) 
     x_name <- deparse_backtick_chk(substitute(x))

@@ -172,7 +172,6 @@ mod_parameters_server <- function(input, output, session) {
 
     param_ui(attributes, ns)
   })
-  observe({print(check_file())})
 
   check_file <- reactive({
     req(input$uploadData)
@@ -216,6 +215,7 @@ mod_parameters_server <- function(input, output, session) {
   get_error_param <- reactive({
     x <- check_population()
     x <- strsplit(x, " ") %>% unlist()
+    x <- gsub("`", "", x)
     x[which(x %in% attributes$Parameter)][1]
   })
 

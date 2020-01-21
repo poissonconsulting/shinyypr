@@ -13,14 +13,3 @@ test_that("file upload checks work", {
   testthat::expect_error(chk_colnames(y), "Column names in uploaded data must be 'Parameter' and 'Value'.", class = "chk_error")
   testthat::expect_identical(chk_colnames(x), x)
 })
-
-test_that("yield inputs work", {
-  x <- ypr::adams_bt_03
-  y <- x
-  class(y) <- "yup"
-  testthat::expect_error(chk_yield_parameters(x, -1, parameters = parameters), class = "chk_error")
-  testthat::expect_error(chk_yield_parameters(x, 1, 2, FALSE, parameters = parameters), class = "chk_error")
-  testthat::expect_error(chk_yield_parameters(x, 1, FALSE, 2, parameters = parameters), class = "chk_error")
-  testthat::expect_error(chk_yield_parameters(y, parameters = parameters), "x` must inherit from S3 class 'ypr_population'", class = "chk_error")
-  testthat::expect_identical(chk_yield_parameters(x, parameters = parameters), x)
-})

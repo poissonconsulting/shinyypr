@@ -40,7 +40,7 @@ param_ui <- function(attributes, ns) {
             }
           )),
           purrr::map(x$Parameter, function(y) {
-            textOutput(ns(p0("error", y)))
+            div(textOutput(ns(p0("error", y))), class = "error-message")
           }),
           br(),
           class = "well2"
