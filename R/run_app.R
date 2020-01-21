@@ -3,7 +3,7 @@
 #' @param population A ypr population object
 #' @export
 run_ypr_app <- function(population = NULL) {
-  chk::chkor(ypr:::chk_population(population), chk::chk_null(population))
+  chk::chkor(chk_population(population, parameters), chk::chk_null(population))
 
   shinyOptions(population = population)
 

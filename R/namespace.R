@@ -1,3 +1,3 @@
 #' @import chk lifecycle ypr magrittr
-#' @rawNamespace import(shiny, except = p)
+#' @rawNamespace import(shiny, except = p) 
 NULL

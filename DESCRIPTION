@@ -1,9 +1,17 @@
 Package: shinyypr
-Title: Run ypr Shiny App
+Title: Run Ypr Shiny App
 Version: 0.0.1
-Authors@R: c(
-    person("Sebastian", "Dalgarno", , "seb@poissonconsulting.ca", "ctb", comment = c(ORCID = "0000-0002-3658-4517")),
-    person("Joe", "Thorley", , "joe@poissonconsulting.ca", c("aut", "cre"), comment = c(ORCID = "0000-0002-7683-4592")))
+Authors@R: 
+    c(person(given = "Sebastian",
+             family = "Dalgarno",
+             role = c("aut", "cre"),
+             email = "seb@poissonconsulting.ca",
+             comment = c(ORCID = "0000-0002-3658-4517")),
+      person(given = "Joe",
+             family = "Thorley",
+             role = "ctb",
+             email = "joe@poissonconsulting.ca",
+             comment = c(ORCID = "0000-0002-7683-4592")))
 Description: An R package to run the ypr Shiny app.
 License: MIT + file LICENSE
 Depends: 

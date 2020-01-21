@@ -172,18 +172,18 @@ mod_parameters_server <- function(input, output, session) {
 
     param_ui(attributes, ns)
   })
+  observe({print(check_file())})
 
   check_file <- reactive({
     req(input$uploadData)
     data <- read_file()
     x <- try({
-      check_colnames(data)
-      check_parameters(data)
+      chk_colnames(data)
+      chk_parameter_names(data)
     })
     if (inherits(x, "try-error")) {
       return({
-        y <- gsub("Error : ", "", x)
-        gsub("all the elements in ypr:::.parameters\\$Parameter\n", paste("parameters:", paste(ypr:::.parameters$Parameter, collapse = ", ")), y)
+        gsub("Error : ", "", x[[1]])
       })
     }
     ""
@@ -206,7 +206,7 @@ mod_parameters_server <- function(input, output, session) {
   check_population <- reactive({
     req(get_population())
     data <- get_population()
-    x <- try(ypr:::chk_population(data), silent = TRUE)
+    x <- try(chk_population(data), silent = TRUE)
     if (inherits(x, "try-error")) {
       return(gsub("Error : ", "", x))
     }

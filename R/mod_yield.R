@@ -76,7 +76,7 @@ mod_yield_server <- function(input, output, session, params) {
   })
 
   check_yield <- reactive({
-    x <- try(check_yield_parameters(
+    x <- try(chk_yield_parameters(
       ypr::ypr_population(),
       Ly = as.numeric(params$Ly()),
       harvest = TRUE,

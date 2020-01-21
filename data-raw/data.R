@@ -2,6 +2,7 @@ library(ypr)
 library(purrr)
 
 params <- ypr::ypr_population()
+parameters <- names(params)
 attributes <- ypr:::.parameters
 template <- ypr_tabulate_parameters(ypr_population())
 schedule <- ypr::ypr_schedule(ypr_population())
@@ -35,7 +36,7 @@ datasets <- map2_dfr(datasets$Item, datasets$Title, function(a, b) {
 fish.y <- c("Survivors", "Spawners", "Caught", "Harvested", "Released", "HandlingMortalities")
 fish.x <- c("Age", "Length", "Weight")
 
-usethis::use_data(params, attributes, template, desc, schedule,
+usethis::use_data(parameters, params, attributes, template, desc, schedule,
   dropdown_list, datasets, fish.x, fish.y,
   internal = TRUE, overwrite = TRUE
 )
