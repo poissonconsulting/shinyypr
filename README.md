@@ -66,7 +66,7 @@ shinyypr::run_ypr_app(adams_adjusted)
 ## Information
 
 For more information see the `ypr` R package [Get
-Started](https://poissonconsulting.github.io/shinyypr/articles/shinyypr.html)
+Started](https://poissonconsulting.github.io/ypr/articles/ypr.html)
 vignette.
 
 ## Contribution
