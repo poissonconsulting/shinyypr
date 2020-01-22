@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Run Ypr Shiny App">
-<meta property="og:description" content="An R package to run the ypr Shiny app.">
+<meta property="og:description" content="An R package that provides a user interface to the ypr R package. Ypr implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -84,7 +84,7 @@
 <a href="#shinyypr" class="anchor"></a>shinyypr <img src="reference/figures/logo.png" align="right">
 </h1></div>
 <!-- badges: start -->
-<p><a href="https://www.tidyverse.org/lifecycle/%60#maturing"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> <a href="https://travis-ci.com/poissonconsulting/shinyypr"><img src="https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/poissonconsulting/shinyypr"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/shinyypr?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/poissonconsulting/shinyypr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a> <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/shinyypr)](https://CRAN.R-project.org/package=shinyypr) --> <a href="https://cran.r-project.org/package=shinyypr"><img src="https://www.r-pkg.org/badges/version/shinyypr" alt="CRAN status"></a> <img src="https://cranlogs.r-pkg.org/badges/shinyypr" alt="CRAN downloads"><!-- badges: end --></p>
+<p><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="https://travis-ci.com/poissonconsulting/shinyypr"><img src="https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/poissonconsulting/shinyypr"><img src="https://ci.appveyor.com/api/projects/status/github/poissonconsulting/shinyypr?branch=master&amp;svg=true" alt="AppVeyor build status"></a> <a href="https://codecov.io/gh/poissonconsulting/shinyypr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a> <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/shinyypr)](https://CRAN.R-project.org/package=shinyypr) --> <a href="https://cran.r-project.org/package=shinyypr"><img src="https://www.r-pkg.org/badges/version/shinyypr" alt="CRAN status"></a> <img src="https://cranlogs.r-pkg.org/badges/shinyypr" alt="CRAN downloads"><!-- badges: end --></p>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h2>
@@ -112,18 +112,19 @@
 <a class="sourceLine" id="cb3-5" title="5">adams &lt;-<span class="st"> </span>ypr<span class="op">::</span>adams_bt_<span class="dv">03</span></a>
 <a class="sourceLine" id="cb3-6" title="6">adams_adjusted &lt;-<span class="st"> </span>ypr<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html">ypr_population_update</a></span>(adams, <span class="st">"Rk"</span> =<span class="st"> </span><span class="dv">5</span>, <span class="st">"Linf"</span> =<span class="st"> </span><span class="dv">140</span>)</a>
 <a class="sourceLine" id="cb3-7" title="7">shinyypr<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/shinyypr/man/run_ypr_app.html">run_ypr_app</a></span>(adams_adjusted)</a></code></pre></div>
+<p><code>shinyypr</code> also ships with an RStudio addin.</p>
 </div>
 <div id="information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#information" class="anchor"></a>Information</h2>
-<p>For more information see the <a href="https://poissonconsulting.github.io/shinyypr/articles/shinyypr.html">Get Started</a> vignette.</p>
+<p>For more information see the <code>ypr</code> R package <a href="https://poissonconsulting.github.io/shinyypr/articles/shinyypr.html">Get Started</a> vignette.</p>
 </div>
 <div id="contribution" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contribution" class="anchor"></a>Contribution</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/shinyypr/issues">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/shinyypr/pulls">Pull requests</a> are always welcome.</p>
-<p>Please note that this project is released with a <a href="https://github.com/poissonconsulting/shinyypr/blob/master/CODE_OF_CONDUCT.md">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
+<p>Please note that this project is released with a <a href="https://poissonconsulting.github.io/ypr/articles/ypr.html">Contributor Code of Conduct</a>. By contributing, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>

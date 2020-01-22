@@ -5,8 +5,7 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/%60#maturing)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master)](https://travis-ci.com/poissonconsulting/shinyypr)
 [![AppVeyor build
@@ -62,9 +61,11 @@ adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
 shinyypr::run_ypr_app(adams_adjusted)
 ```
 
+`shinyypr` also ships with an RStudio addin.
+
 ## Information
 
-For more information see the [Get
+For more information see the `ypr` R package [Get
 Started](https://poissonconsulting.github.io/shinyypr/articles/shinyypr.html)
 vignette.
 
@@ -77,5 +78,5 @@ Please report any
 always welcome.
 
 Please note that this project is released with a [Contributor Code of
-Conduct](https://github.com/poissonconsulting/shinyypr/blob/master/CODE_OF_CONDUCT.md).
-By contributing, you agree to abide by its terms.
+Conduct](https://poissonconsulting.github.io/ypr/articles/ypr.html). By
+contributing, you agree to abide by its terms.

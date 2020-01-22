@@ -90,22 +90,19 @@
 
     
     
-<p>In order to create a new package the user should</p>
-<ol style="list-style-type: decimal">
-<li>Go to the shinyypr <a href="https://github.com/poissonconsulting/shinyypr">GitHub repository</a> and choose ‘Use this template’.</li>
-<li>Clone the new repository and replace ‘shinyypr’ with the name of the new package in <code>DESCRIPTION</code>, <code>NEWS.md</code>, <code>tests/testthat.R</code>, <code>vignettes/shinyypr.Rmd</code> and this <code>README.Rmd</code> file.</li>
-<li>
-<code><a href="https://rdrr.io/pkg/devtools/man/check.html">devtools::check()</a></code> the package and fix any Errors, Warnings or Notes.</li>
-<li>Knit this <code>README.Rmd</code> file and <code><a href="https://pkgdown.r-lib.org/reference/build_site.html">pkgdown::build_site()</a></code>.</li>
-<li>Add the project to <a href="https://www.travis-ci.com/poissonconsulting/shinyypr">Travis</a> and in the <a href="https://www.travis-ci.com/poissonconsulting/shinyypr/settings">Settings</a> add a Cron Job to run the master branch daily if there hasn’t been a build in the last 24h.</li>
-<li>Add the project to <a href="https://ci.appveyor.com/project/poissonconsulting/shinyypr">Appveyor</a>.</li>
-<li>Rename the <code>shinyypr.Rproj</code> and <code>vignettes/shinyypr.Rmd</code> files.</li>
-<li>Push the changes to the new repository.</li>
-<li>Go to the repository GitHub <a href="https://github.com/poissonconsulting/shinyypr/settings">settings</a> and set the GitHub Pages Source to be the master branch /docs folder.</li>
-<li>Edit the GitHub repository <a href="https://github.com/poissonconsulting/shinyypr/">description</a> and set the website to be <a href="https://poissonconsulting.github.io/shinyypr/" class="uri">https://poissonconsulting.github.io/shinyypr/</a>.</li>
-<li>If you aren’t developing a Shiny app, run <code>shinyypr:::cannibalise_shiny(getwd())</code> to remove any Shiny-related files (make sure that getwd() points to the correct place!)</li>
-</ol>
-</div>
+<p><code>shinyypr</code> is an R package to run a user interface to the <a href="https://github.com/poissonconsulting/ypr">ypr</a> R package. <a href="https://github.com/poissonconsulting/ypr">ypr</a> implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.</p>
+<p>The user interface can simply be opened with default parameter settings.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(shinyypr)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw"><a href="../reference/run_ypr_app.html">run_ypr_app</a></span>()</a></code></pre></div>
+<p>The <code>run_ypr_app</code> function also has a single argument that allows the user to pass a valid ypr_population object, which populates the app parameter values on startup.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(ypr)</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(shinyypr)</a>
+<a class="sourceLine" id="cb2-3" title="3">adams &lt;-<span class="st"> </span>adams_bt_<span class="dv">03</span></a>
+<a class="sourceLine" id="cb2-4" title="4">adams_adjusted &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html">ypr_population_update</a></span>(adams, <span class="st">"Rk"</span> =<span class="st"> </span><span class="dv">5</span>, <span class="st">"Linf"</span> =<span class="st"> </span><span class="dv">140</span>)</a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw"><a href="../reference/run_ypr_app.html">run_ypr_app</a></span>(adams_adjusted)</a></code></pre></div>
+<p><code>shinyypr</code> also ships with an RStudio addin.</p>
+<p>For more information see the <code>ypr</code> R package <a href="https://poissonconsulting.github.io/ypr/articles/ypr.html">Get Started</a> vignette.</p>
+  </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 

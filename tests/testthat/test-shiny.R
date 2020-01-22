@@ -14,7 +14,7 @@ test_that("app and addin", {
   x <- run_ypr_app()
   expect_is(x, "shiny.appobj")
   expect_error(run_ypr_app("test"))
-  
+
   x <- shinyypr_addin()
   expect_is(x, "shiny.appobj")
 })
@@ -50,6 +50,3 @@ test_that("utils", {
   expect_is(x, "shiny.tag")
   expect_error(toggle2(), "shinyjs: could not find the Shiny session object. This usually happens when a shinyjs function is called from a context that wasn't set up by a Shiny session.")
 })
-
-
-

@@ -14,16 +14,25 @@ knitr::opts_chunk$set(
 )
 ```
 
-In order to create a new package the user should
+`shinyypr` is an R package to run a user interface to the [ypr](https://github.com/poissonconsulting/ypr) R package. [ypr](https://github.com/poissonconsulting/ypr) implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.
 
-1) Go to the shinyypr [GitHub repository](https://github.com/poissonconsulting/shinyypr) and choose 'Use this template'.
-1) Clone the new repository and replace 'shinyypr' with the name of the new package in `DESCRIPTION`, `NEWS.md`, `tests/testthat.R`, `vignettes/shinyypr.Rmd` and this `README.Rmd` file.
-1) `devtools::check()` the package and fix any Errors, Warnings or Notes.
-1) Knit this `README.Rmd` file and `pkgdown::build_site()`.
-1) Add the project to [Travis](https://www.travis-ci.com/poissonconsulting/shinyypr) and in the [Settings](https://www.travis-ci.com/poissonconsulting/shinyypr/settings) add a Cron Job to run the master branch daily if there hasn't been a build in the last 24h.
-1) Add the project to [Appveyor](https://ci.appveyor.com/project/poissonconsulting/shinyypr).
-1) Rename the `shinyypr.Rproj` and `vignettes/shinyypr.Rmd` files.
-1) Push the changes to the new repository.
-1) Go to the repository GitHub [settings](https://github.com/poissonconsulting/shinyypr/settings) and set the GitHub Pages Source to be the master branch /docs folder.
-1) Edit the GitHub repository [description](https://github.com/poissonconsulting/shinyypr/) and set the website to be <https://poissonconsulting.github.io/shinyypr/>.
-1) If you aren't developing a Shiny app, run  `shinyypr:::cannibalise_shiny(getwd())`  to remove any Shiny-related files (make sure that getwd() points to the correct place!) 
+The user interface can simply be opened with default parameter settings.
+```{r, eval=FALSE}
+library(shinyypr)
+run_ypr_app()
+```
+
+The `run_ypr_app` function also has a single argument that allows the user to pass a valid ypr_population object, which populates the app parameter values on startup.
+
+```{r, eval=FALSE}
+library(ypr)
+library(shinyypr)
+adams <- adams_bt_03
+adams_adjusted <- ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
+run_ypr_app(adams_adjusted)
+```
+
+`shinyypr` also ships with an RStudio addin. 
+
+For more information see the `ypr` R package [Get Started](https://poissonconsulting.github.io/ypr/articles/ypr.html) vignette.
+

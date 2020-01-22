@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-An R package to run the ypr Shiny app.
+An R package that provides a user interface to the 'ypr' R package. 'Ypr' implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.
 }
 \seealso{
 Useful links:
