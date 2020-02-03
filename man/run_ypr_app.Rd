@@ -12,3 +12,6 @@ run_ypr_app(population = NULL)
 \description{
 Run Shiny Application
 }
+\examples{
+if(interactive()){run_ypr_app()}
+}

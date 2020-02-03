@@ -24,6 +24,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID}) [contributor]
+  \item Poisson Consulting [copyright holder, funder]
 }
 
 }

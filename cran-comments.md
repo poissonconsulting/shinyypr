@@ -11,10 +11,6 @@ release 3.6.2
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 1 notes
 
-* Possibly mis-spelled words in DESCRIPTION:
-  Ypr (2:12)
-  ypr (15:38)
-* These are correct spelling of another R package.
 * This is a new release.
