@@ -14,7 +14,7 @@
 mod_report_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    waiter::use_butler(),
+    waiter::use_waiter(),
     br(),
     downloadButton(ns("downloadReportHTML"),
       class = "small-dl",
@@ -24,6 +24,7 @@ mod_report_ui <- function(id) {
       class = "small-dl",
       label = "Download Rmd"
     ),
+    br(), br(),
     uiOutput(ns("ui_report"))
   )
 }
@@ -38,21 +39,33 @@ mod_report_server <- function(input, output, session, params) {
 
   path_rv <- reactiveValues(
     rmd = NULL,
-    html = NULL
+    html = NULL,
+    www = NULL
   )
 
   observe({
-    waiter::show_butler()
-    tmp_dir <- tempdir()
+    waiter::waiter_show(html = waiter_html("Creating yield-per-recruit report ..."))
+    session_token <- session$token
+    tmp_dir <- file.path(system.file('app/www', package = 'shinyypr'), session_token)
+    dir.create(tmp_dir)
+    
+    addResourcePath(session_token, tmp_dir)
+
     path_rmd <- file.path(tmp_dir, "report.Rmd")
-    path_html <- file.path(tmp_dir, "report.Rmd")
+    path_html <- file.path(tmp_dir, "report.html")
 
     path_rv$rmd <- path_rmd
     path_rv$html <- path_html
+    path_rv$www <- file.path(session_token, "report.html")
 
     ypr::ypr_report(params$population(), file = path_rmd, ask = FALSE)
     rmarkdown::render(path_rmd, output_file = path_html)
-    waiter::hide_butler()
+    waiter::waiter_hide()
+  })
+  
+  session$onSessionEnded(function() {
+    unlink(file.path(system.file('app/www', package = 'shinyypr'), session$token),
+           recursive = TRUE)
   })
 
   output$downloadReportHTML <- downloadHandler(
@@ -73,7 +86,8 @@ mod_report_server <- function(input, output, session, params) {
 
   output$ui_report <- renderUI({
     req(path_rv$html)
-    includeHTML(path_rv$html)
+    div(tags$iframe(seamless = "seamless", src = path_rv$www, 
+                width = 800, height = 800), style = "text-align: center;")
   })
 }
 
