@@ -10,7 +10,7 @@ chk_parameter_names <- function(x) {
 }
 
 chk_colnames <- function(x) {
-  if (!identical(sort(colnames(x)), sort(c("Parameter", "Value")))) {
+  if (!all(c("Value", "Parameter") %in% names(x))) {
     abort_chk("Column names in uploaded data must be 'Parameter' and 'Value'.")
   }
   invisible(x)

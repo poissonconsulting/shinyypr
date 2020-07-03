@@ -176,6 +176,7 @@ mod_parameters_server <- function(input, output, session) {
   check_file <- reactive({
     req(input$uploadData)
     data <- read_file()
+    print(data)
     x <- try({
       chk_colnames(data)
       chk_parameter_names(data)
