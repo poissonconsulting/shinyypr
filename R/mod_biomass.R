@@ -11,7 +11,6 @@
 #' @rdname mod_biomass
 #'
 #' @keywords internal
-#' @export
 #' @importFrom shiny NS tagList
 mod_biomass_ui <- function(id) {
   ns <- NS(id)
@@ -55,7 +54,6 @@ mod_biomass_ui <- function(id) {
 # Module Server
 
 #' @rdname mod_biomass
-#' @export
 #' @keywords internal
 
 mod_biomass_server <- function(input, output, session, params) {
