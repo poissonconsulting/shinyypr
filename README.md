@@ -6,10 +6,8 @@
 <!-- badges: start -->
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.com/poissonconsulting/shinyypr.svg?branch=master)](https://travis-ci.com/poissonconsulting/shinyypr)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/poissonconsulting/shinyypr?branch=master&svg=true)](https://ci.appveyor.com/project/poissonconsulting/shinyypr)
+[![R build
+status](https://github.com/poissonconsulting/shinyypr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/shinyypr/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/shinyypr?branch=master)
 [![License:
@@ -18,6 +16,7 @@ MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org
 [![CRAN
 status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
+
 <!-- badges: end -->
 
 ## Introduction
@@ -38,15 +37,6 @@ To install the developmental version from
 ``` r
 install.packages("remotes")
 remotes::install_github("poissonconsulting/shinyypr")
-```
-
-To install the latest developmental release from the Poisson drat
-[repository](https://github.com/poissonconsulting/drat)
-
-``` r
-install.packages("drat")
-drat::addRepo("poissonconsulting")
-install.packages("shinyypr")
 ```
 
 ## Demonstration
@@ -77,6 +67,9 @@ Please report any
 [Pull requests](https://github.com/poissonconsulting/shinyypr/pulls) are
 always welcome.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](https://poissonconsulting.github.io/ypr/articles/ypr.html). By
-contributing, you agree to abide by its terms.
+## Code of Conduct
+
+Please note that the shinyypr project is released with a [Contributor
+Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
