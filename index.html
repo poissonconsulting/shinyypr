@@ -45,12 +45,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="articles/shinyypr.html">Get started</a>
 </li>
 <li>
@@ -63,7 +57,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/poissonconsulting/shinyypr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -96,23 +90,21 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org">CRAN</a></p>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/shinyypr">GitHub</a></p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"poissonconsulting/shinyypr"</span>)
-</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/shinyypr"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="demonstration" class="section level2">
 <h2 class="hasAnchor">
 <a href="#demonstration" class="anchor"></a>Demonstration</h2>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="co">### run app with default parameter settings</span>
-<span class="kw">shinyypr</span>::<span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span>()
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co">### run app with default parameter settings</span>
+<span class="fu">shinyypr</span><span class="fu">::</span><span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="co">### provide parameter settings by passing a ypr_population object to the run_ypr_app function</span>
-<span class="kw">adams</span> <span class="op">&lt;-</span> <span class="kw">ypr</span>::<span class="kw"><a href="https://rdrr.io/pkg/ypr/man/adams_bt_03.html">adams_bt_03</a></span>
-<span class="kw">adams_adjusted</span> <span class="op">&lt;-</span> <span class="kw">ypr</span>::<span class="fu"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html">ypr_population_update</a></span>(<span class="kw">adams</span>, <span class="st">"Rk"</span> = <span class="fl">5</span>, <span class="st">"Linf"</span> = <span class="fl">140</span>)
-<span class="kw">shinyypr</span>::<span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span>(<span class="kw">adams_adjusted</span>)
-</pre></div>
+<span class="va">adams</span> <span class="op">&lt;-</span> <span class="fu">ypr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/ypr/man/adams_bt_03.html">adams_bt_03</a></span>
+<span class="va">adams_adjusted</span> <span class="op">&lt;-</span> <span class="fu">ypr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html">ypr_population_update</a></span><span class="op">(</span><span class="va">adams</span>, <span class="st">"Rk"</span> <span class="op">=</span> <span class="fl">5</span>, <span class="st">"Linf"</span> <span class="op">=</span> <span class="fl">140</span><span class="op">)</span>
+<span class="fu">shinyypr</span><span class="fu">::</span><span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="va">adams_adjusted</span><span class="op">)</span></code></pre></div>
 <p><code>shinyypr</code> also ships with an RStudio addin.</p>
 </div>
 <div id="information" class="section level2">
@@ -172,7 +164,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
 <li><a href="https://github.com/poissonconsulting/shinyypr/actions"><img src="https://github.com/poissonconsulting/shinyypr/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://codecov.io/gh/poissonconsulting/shinyypr?branch=master"><img src="https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a></li>
@@ -188,7 +180,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
