@@ -1,5 +1,3 @@
-context("check function tests")
-
 test_that("file upload checks work", {
   x <- ypr::adams_bt_03
   x <- data.frame(Parameter = names(x), Value = unlist(x), row.names = NULL, stringsAsFactors = FALSE)

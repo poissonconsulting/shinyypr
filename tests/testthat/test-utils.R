@@ -1,5 +1,3 @@
-context("internal-utils")
-
 test_that("set_class", {
   x <- list()
   expect_identical(class(x), "list")

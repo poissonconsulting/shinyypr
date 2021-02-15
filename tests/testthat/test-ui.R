@@ -1,5 +1,3 @@
-context("ui function tests")
-
 test_that("ui input functions work", {
   inputs <- list(
     numericInput("1", "1", 1),
