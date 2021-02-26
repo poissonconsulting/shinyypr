@@ -58,7 +58,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/shinyypr/">
+  <a href="https://github.com/poissonconsulting/shinyypr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -79,27 +79,27 @@
       <h1 data-toc-skip>Using shinyypr</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/shinyypr/blob/master/vignettes/shinyypr.Rmd"><code>vignettes/shinyypr.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/poissonconsulting/shinyypr/blob/master/vignettes/shinyypr.Rmd" class="external-link"><code>vignettes/shinyypr.Rmd</code></a></small>
       <div class="hidden name"><code>shinyypr.Rmd</code></div>
 
     </div>
 
     
     
-<p><code>shinyypr</code> is an R package to run a user interface to the <a href="https://github.com/poissonconsulting/ypr">ypr</a> R package. <a href="https://github.com/poissonconsulting/ypr">ypr</a> implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.</p>
+<p><code>shinyypr</code> is an R package to run a user interface to the <a href="https://github.com/poissonconsulting/ypr" class="external-link">ypr</a> R package. <a href="https://github.com/poissonconsulting/ypr" class="external-link">ypr</a> implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.</p>
 <p>The user interface can simply be opened with default parameter settings.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/shinyypr">shinyypr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/shinyypr" class="external-link">shinyypr</a></span><span class="op">)</span>
 <span class="fu"><a href="../reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>The <code>run_ypr_app</code> function also has a single argument that allows the user to pass a valid ypr_population object, which populates the app parameter values on startup.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/ypr">ypr</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/shinyypr">shinyypr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/ypr" class="external-link">ypr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/poissonconsulting/shinyypr" class="external-link">shinyypr</a></span><span class="op">)</span>
 <span class="va">adams</span> <span class="op">&lt;-</span> <span class="va">adams_bt_03</span>
-<span class="va">adams_adjusted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html">ypr_population_update</a></span><span class="op">(</span><span class="va">adams</span>, <span class="st">"Rk"</span> <span class="op">=</span> <span class="fl">5</span>, <span class="st">"Linf"</span> <span class="op">=</span> <span class="fl">140</span><span class="op">)</span>
+<span class="va">adams_adjusted</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/ypr/man/ypr_population_update.html" class="external-link">ypr_population_update</a></span><span class="op">(</span><span class="va">adams</span>, <span class="st">"Rk"</span> <span class="op">=</span> <span class="fl">5</span>, <span class="st">"Linf"</span> <span class="op">=</span> <span class="fl">140</span><span class="op">)</span>
 <span class="fu"><a href="../reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="va">adams_adjusted</span><span class="op">)</span></code></pre></div>
 <p><code>shinyypr</code> also ships with an RStudio addin.</p>
-<p>For more information see the <code>ypr</code> R package <a href="https://poissonconsulting.github.io/ypr/articles/ypr.html">Get Started</a> vignette.</p>
+<p>For more information see the <code>ypr</code> R package <a href="https://poissonconsulting.github.io/ypr/articles/ypr.html" class="external-link">Get Started</a> vignette.</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -111,11 +111,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Sebastian Dalgarno, Poisson Consulting.</p>
+  <p></p>
+<p>Developed by Sebastian Dalgarno, Poisson Consulting.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
