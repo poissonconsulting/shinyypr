@@ -63,7 +63,6 @@ mod_parameters_ui <- function(id) {
     )),
     br(),
     helpText(id = ns("helpHover"), "Hover over parameter name to see description."),
-
     div(id = ns("divParam"), uiOutput(ns("uiParam"))),
     uiOutput(ns("uiTooltip")),
   )
