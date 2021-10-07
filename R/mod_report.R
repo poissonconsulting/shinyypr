@@ -14,7 +14,7 @@
 mod_report_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    waiter::use_waiter(),
+    waiter::useWaiter(),
     br(),
     actionButton(ns("generate"),
                  label = "Generate Report"),

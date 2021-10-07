@@ -3,7 +3,7 @@ app_ui <- function() {
     css_hide_errors(),
     css_navbar(),
     bsplus::use_bs_tooltip(),
-    waiter::waiter_use(),
+    waiter::useWaiter(),
     tags$style(
       type = "text/css",
       ".shiny-output-error { visibility: hidden; }",
