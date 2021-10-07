@@ -1,6 +1,6 @@
 Package: shinyypr
 Title: Run ypr Shiny App
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     c(person(given = "Sebastian",
              family = "Dalgarno",
