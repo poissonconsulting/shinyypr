@@ -29,7 +29,8 @@ mod_yield_ui <- function(id) {
           inline(div(class = "param-label", HTML("y-axis"))),
           inline(selectInput(ns("yYield"),
             label = NULL,
-            choices = c("Yield", "Age", "Length", "Weight", "Effort", "Yield per Unit Effort" = "YPUE"),
+            choices = c("Yield", "Age", "Length", "Weight", 
+                        "Effort", "Yield per Unit Effort" = "YPUE"),
             selected = "Yield"
           ))
         ),
@@ -101,9 +102,3 @@ mod_yield_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_yield_ui("yield_ui_1")
-
-## To be copied in the server
-# callModule(mod_yield_server, "yield_ui_1")

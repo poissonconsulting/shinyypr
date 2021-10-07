@@ -62,7 +62,10 @@ mod_parameters_ui <- function(id) {
       ))
     )),
     br(),
-    helpText(id = ns("helpHover"), "Hover over parameter name to see description."),
+    helpText(
+      id = ns("helpHover"), 
+      "Hover over parameter name to see description."
+    ),
     div(id = ns("divParam"), uiOutput(ns("uiParam"))),
     uiOutput(ns("uiTooltip")),
   )
@@ -109,7 +112,7 @@ mod_parameters_server <- function(input, output, session) {
   get_population <- reactive({
     req(input[[names(params)[1]]])
     population <- list()
-    for (i in 1:length(params)) {
+    for (i in 1:seq_len(params)) {
       population[i] <- input[[names(params)[i]]]
       names(population)[i] <- names(params)[i]
       class(population[i]) <- lapply(params, class)[[i]]
@@ -275,9 +278,3 @@ mod_parameters_server <- function(input, output, session) {
     )
   )
 }
-
-## To be copied in the UI
-# mod_parameters_ui("parameters_ui_1")
-
-## To be copied in the server
-# callModule(mod_parameters_server, "parameters_ui_1")

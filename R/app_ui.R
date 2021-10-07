@@ -71,5 +71,11 @@ app_ui <- function() {
 
 add_external_resources <- function() {
   addResourcePath("www", system.file("app/www", package = "shinyypr"))
-  tagList(tags$link(rel = "stylesheet", type = "text/css", href = "www/style.css"))
+  tagList(
+    tags$link(
+      rel = "stylesheet", 
+      type = "text/css", 
+      href = "www/style.css"
+    )
+  )
 }

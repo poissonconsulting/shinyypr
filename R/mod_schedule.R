@@ -71,8 +71,12 @@ mod_schedule_server <- function(input, output, session, params) {
   })
 
   plot_schedule <- reactive({
-    # if(check_population() != ""){return()}
-    ypr::ypr_plot_schedule(params$population(), x = input$xSchedule, y = input$ySchedule)
+    # if(check_population() != ""){return() }
+    ypr::ypr_plot_schedule(
+      params$population(), 
+      x = input$xSchedule, 
+      y = input$ySchedule
+    )
   })
 
   table_schedule <- reactive({
@@ -105,9 +109,3 @@ mod_schedule_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_schedule_ui("schedule_ui_1")
-
-## To be copied in the server
-# callModule(mod_schedule_server, "schedule_ui_1")

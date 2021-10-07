@@ -42,9 +42,14 @@ mod_report_server <- function(input, output, session, params) {
   )
 
   observeEvent(input$generate, {
-    waiter::waiter_show(html = waiter_html("Creating yield-per-recruit report ..."))
+    waiter::waiter_show(
+      html = waiter_html("Creating yield-per-recruit report ...")
+    )
     session_token <- session$token
-    tmp_dir <- file.path(system.file("app/www", package = "shinyypr"), session_token)
+    tmp_dir <- file.path(
+      system.file("app/www", package = "shinyypr"), 
+      session_token
+    )
     dir.create(tmp_dir)
 
     addResourcePath(session_token, tmp_dir)
@@ -110,9 +115,3 @@ mod_report_server <- function(input, output, session, params) {
     ), style = "text-align: center;")
   })
 }
-
-## To be copied in the UI
-# mod_report_ui("report_ui_1")
-
-## To be copied in the server
-# callModule(mod_report_server, "report_ui_1")

@@ -15,7 +15,11 @@ mod_parameter_table_ui <- function(id) {
   ns <- NS(id)
   tagList(
     br(),
-    downloadButton(ns("downloadParameters"), label = "Download parameter values", class = "small-dl"),
+    downloadButton(
+      ns("downloadParameters"), 
+      label = "Download parameter values", 
+      class = "small-dl"
+    ),
     br(), br(),
     wellPanel(DT::dataTableOutput(ns("tableParameters")), class = "wellpanel")
   )
@@ -53,9 +57,3 @@ mod_parameter_table_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_parameter_table_ui("parameter_table_ui_1")
-
-## To be copied in the server
-# callModule(mod_parameter_table_server, "parameter_table_ui_1")

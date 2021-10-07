@@ -89,9 +89,3 @@ mod_recruitment_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_recruitment_ui("recruitment_ui_1")
-
-## To be copied in the server
-# callModule(mod_recruitment_server, "recruitment_ui_1")
