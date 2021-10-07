@@ -19,7 +19,7 @@ test_that("is_try_error", {
 })
 
 test_that("sys_time", {
-  expect_is(sys_time(), "POSIXct")
+  expect_s3_class(sys_time(), "POSIXct")
   expect_identical(attr(sys_time(), "tzone"), "UTC")
 })
 
