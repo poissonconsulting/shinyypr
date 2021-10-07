@@ -1,5 +1,5 @@
-Name: shinyypr app
-Description: shinyypr addin to open ypr app.
+Name: Run shiny ypr app
+Description: Launch the ypr shiny application
 Binding: shinyypr_addin
 Interactive: true
 
