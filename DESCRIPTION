@@ -1,5 +1,5 @@
 Package: shinyypr
-Title: Run Ypr Shiny App
+Title: Run ypr Shiny App
 Version: 0.0.2
 Authors@R: 
     c(person(given = "Sebastian",
@@ -18,30 +18,32 @@ Authors@R:
              email = "ayla@poissonconsulting.ca",
              comment = c(ORCID = "0000-0001-7388-1222")),
       person("Poisson Consulting", role = c("cph", "fnd")))
-Description: A user interface to the 'ypr' R package. 'Ypr' implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.
+Description: A user interface to the 'ypr' R package. 'Ypr' implements 
+  equilibrium-based yield per recruit methods for estimating the optimal yield 
+  for a fish population.
 License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)
 Imports:
-    stats,
     chk,
-    lifecycle,
-    shiny,
-    ypr,
-    shinyjs,
+    bsplus,
+    DT,
     dplyr,
+    ggplot2,
+    lifecycle,
+    magrittr,
     purrr,
     readr,
-    ggplot2,
-    magrittr,
-    DT,
-    bsplus,
+    shiny,
+    shinyjs,
+    stats,
+    ypr,
     waiter
 Suggests: 
     covr,
-    testthat (>= 3.0.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 URL: https://github.com/poissonconsulting/shinyypr
 BugReports: https://github.com/poissonconsulting/shinyypr/issues
 Encoding: UTF-8

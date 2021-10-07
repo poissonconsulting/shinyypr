@@ -4,7 +4,7 @@
 \name{shinyypr-package}
 \alias{shinyypr}
 \alias{shinyypr-package}
-\title{shinyypr: Run Ypr Shiny App}
+\title{shinyypr: Run ypr Shiny App}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
