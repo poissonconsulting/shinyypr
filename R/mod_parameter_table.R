@@ -43,7 +43,7 @@ mod_parameter_table_server <- function(input, output, session, params) {
     table_parameters() %>%
       DT::datatable(options = list(pageLength = 50), autoHideNavigation = TRUE)
   })
-  
+
   output$downloadParameters <- downloadHandler(
     filename = function() {
       "ypr_parameter_values.csv"
