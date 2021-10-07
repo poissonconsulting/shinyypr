@@ -260,15 +260,6 @@ mod_parameters_server <- function(input, output, session) {
     }
   )
 
-  output$downloadParameters <- downloadHandler(
-    filename = function() {
-      "ypr_parameter_values.csv"
-    },
-    content = function(file) {
-      readr::write_csv(get_parameter_values(), file)
-    }
-  )
-
   return(
     list(
       population = get_population,
