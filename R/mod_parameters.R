@@ -112,7 +112,7 @@ mod_parameters_server <- function(input, output, session) {
   get_population <- reactive({
     req(input[[names(params)[1]]])
     population <- list()
-    for (i in 1:seq_len(params)) {
+    for (i in 1:length(params)) {
       population[i] <- input[[names(params)[i]]]
       names(population)[i] <- names(params)[i]
       class(population[i]) <- lapply(params, class)[[i]]
