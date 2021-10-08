@@ -3,12 +3,9 @@
 release 4.1.1
 
 * OSX (local) - release
-
-### need to double check these are green once changes have been committed
 * OSX (actions) - release
 * Ubuntu (actions) - 3.4 to 3.6, oldrel, release and devel
 * Windows (actions) - release
-
 * Windows (winbuilder) - devel, oldrel
 * R-hub (devtools) - windows (R-devel), Ubuntu (R-release), Fedora (R-devel)
 
