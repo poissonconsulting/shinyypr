@@ -6,3 +6,7 @@
 
 * Updated Report tab to display rendered report in iframe.
 
+# shinyypr 0.0.3
+
+* Fixed bug in download button on the Parameters Tab
+* Updated name and description in Addins
