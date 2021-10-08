@@ -15,7 +15,11 @@ mod_parameter_table_ui <- function(id) {
   ns <- NS(id)
   tagList(
     br(),
-    downloadButton(ns("downloadParameters"), label = "Download parameter values", class = "small-dl"),
+    downloadButton(
+      ns("downloadParameters"), 
+      label = "Download parameter values", 
+      class = "small-dl"
+    ),
     br(), br(),
     wellPanel(DT::dataTableOutput(ns("tableParameters")), class = "wellpanel")
   )
@@ -43,10 +47,13 @@ mod_parameter_table_server <- function(input, output, session, params) {
     table_parameters() %>%
       DT::datatable(options = list(pageLength = 50), autoHideNavigation = TRUE)
   })
+
+  output$downloadParameters <- downloadHandler(
+    filename = function() {
+      "ypr_parameter_values.csv"
+    },
+    content = function(file) {
+      readr::write_csv(params$parameter_values(), file)
+    }
+  )
 }
-
-## To be copied in the UI
-# mod_parameter_table_ui("parameter_table_ui_1")
-
-## To be copied in the server
-# callModule(mod_parameter_table_server, "parameter_table_ui_1")

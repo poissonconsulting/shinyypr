@@ -6,7 +6,7 @@ test_that("ui input functions work", {
     numericInput("1", "1", 1)
   )
   x <- splitLayout2(inputs)
-  testthat::expect_is(x[[1]], "shiny.tag")
+  testthat::expect_s3_class(x[[1]], "shiny.tag")
   testthat::expect_length(x, 2)
 
   params <- ypr::ypr_tabulate_parameters(ypr::adams_bt_03)
@@ -16,8 +16,8 @@ test_that("ui input functions work", {
   attributes$subgroup <- attributes$Importance
   x <- attribute_to_subgroup(attributes)
   expect_length(x, 6)
-  expect_is(x, "list")
+  expect_type(x, "list")
 
   x <- param_ui(attributes, ns = shiny::NS("hi"))
-  expect_is(x, "shiny.tag")
+  expect_s3_class(x, "shiny.tag")
 })

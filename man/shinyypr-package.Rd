@@ -4,7 +4,7 @@
 \name{shinyypr-package}
 \alias{shinyypr}
 \alias{shinyypr-package}
-\title{shinyypr: Run Ypr Shiny App}
+\title{shinyypr: Run ypr Shiny App}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
@@ -19,7 +19,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Sebastian Dalgarno \email{seb@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-3658-4517}{ORCID})
+\strong{Maintainer}: Ayla Pearson \email{ayla@poissonconsulting.ca} (\href{https://orcid.org/0000-0001-7388-1222}{ORCID})
+
+Authors:
+\itemize{
+  \item Sebastian Dalgarno \email{seb@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-3658-4517}{ORCID})
+}
 
 Other contributors:
 \itemize{

@@ -116,9 +116,3 @@ mod_fish_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_fish_ui("fish_ui_1")
-
-## To be copied in the server
-# callModule(mod_fish_server, "fish_ui_1")

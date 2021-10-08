@@ -95,9 +95,3 @@ mod_biomass_server <- function(input, output, session, params) {
     }
   )
 }
-
-## To be copied in the UI
-# mod_biomass_ui("biomass_ui_1")
-
-## To be copied in the server
-# callModule(mod_biomass_server, "biomass_ui_1")

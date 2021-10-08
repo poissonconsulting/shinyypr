@@ -1,16 +1,17 @@
 ## Test environments
 
-release 3.6.2
+release 4.1.1
 
-* OS X (local) - release
+* OSX (local) - release
 
-* Ubuntu (travis) - oldrelease, release and devel
+### need to double check these are green once changes have been committed
+* OSX (actions) - release
+* Ubuntu (actions) - 3.4 to 3.6, oldrel, release and devel
+* Windows (actions) - release
 
-* Windows (appveyor) - release
-* Windows (win-builder) - devel
+* Windows (winbuilder) - devel, oldrel
+* R-hub (devtools) - windows (R-devel), Ubuntu (R-release), Fedora (R-devel)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
-
-* This is the 2nd release fixing a bug.

@@ -1,8 +1,10 @@
 # ###### ------ parameter inputs
-waiter_html <- function(x){
-  tagList(waiter::spin_chasing_dots(),
-          br(), br(),
-          h3(x))
+waiter_html <- function(x) {
+  tagList(
+    waiter::spin_chasing_dots(),
+    br(), br(),
+    h3(x)
+  )
 }
 
 splitLayout2 <- function(inputs) {

@@ -3,7 +3,7 @@ app_ui <- function() {
     css_hide_errors(),
     css_navbar(),
     bsplus::use_bs_tooltip(),
-    waiter::waiter_use(),
+    waiter::useWaiter(),
     tags$style(
       type = "text/css",
       ".shiny-output-error { visibility: hidden; }",
@@ -71,5 +71,11 @@ app_ui <- function() {
 
 add_external_resources <- function() {
   addResourcePath("www", system.file("app/www", package = "shinyypr"))
-  tagList(tags$link(rel = "stylesheet", type = "text/css", href = "www/style.css"))
+  tagList(
+    tags$link(
+      rel = "stylesheet", 
+      type = "text/css", 
+      href = "www/style.css"
+    )
+  )
 }

@@ -14,10 +14,12 @@
 mod_report_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    waiter::use_waiter(),
+    waiter::useWaiter(),
     br(),
-    actionButton(ns("generate"),
-                 label = "Generate Report"),
+    actionButton(
+      ns("generate"),
+      label = "Generate Report"
+    ),
     br(), br(),
     uiOutput(ns("ui_download")),
     br(), br(),
@@ -38,30 +40,37 @@ mod_report_server <- function(input, output, session, params) {
     html = NULL,
     www = NULL
   )
-  
+
   observeEvent(input$generate, {
-    waiter::waiter_show(html = waiter_html("Creating yield-per-recruit report ..."))
+    waiter::waiter_show(
+      html = waiter_html("Creating yield-per-recruit report ...")
+    )
     session_token <- session$token
-    tmp_dir <- file.path(system.file('app/www', package = 'shinyypr'), session_token)
+    tmp_dir <- file.path(
+      system.file("app/www", package = "shinyypr"), 
+      session_token
+    )
     dir.create(tmp_dir)
-    
+
     addResourcePath(session_token, tmp_dir)
-    
+
     path_rmd <- file.path(tmp_dir, "report.Rmd")
     path_html <- file.path(tmp_dir, "report.html")
-    
+
     path_rv$rmd <- path_rmd
     path_rv$html <- path_html
     path_rv$www <- file.path(session_token, "report.html")
-    
+
     ypr::ypr_report(params$population(), file = path_rmd, ask = FALSE)
     rmarkdown::render(path_rmd, output_file = path_html)
     waiter::waiter_hide()
   })
-  
+
   session$onSessionEnded(function() {
-    unlink(file.path(system.file('app/www', package = 'shinyypr'), session$token),
-           recursive = TRUE)
+    unlink(
+      file.path(system.file("app/www", package = "shinyypr"), session$token),
+      recursive = TRUE
+    )
   })
 
   output$downloadReportHTML <- downloadHandler(
@@ -70,17 +79,19 @@ mod_report_server <- function(input, output, session, params) {
       file.copy(path_rv$html, file)
     }
   )
-  
+
   output$ui_download <- renderUI({
     req(path_rv$html)
     tagList(
-      downloadButton(ns("downloadReportHTML"),
-                     class = "small-dl",
-                     label = "Download HTML"
+      downloadButton(
+        ns("downloadReportHTML"),
+        class = "small-dl",
+        label = "Download HTML"
       ),
-      downloadButton(ns("downloadReportRmd"),
-                     class = "small-dl",
-                     label = "Download Rmd"
+      downloadButton(
+        ns("downloadReportRmd"),
+        class = "small-dl",
+        label = "Download Rmd"
       )
     )
   })
@@ -96,13 +107,11 @@ mod_report_server <- function(input, output, session, params) {
 
   output$ui_report <- renderUI({
     req(path_rv$html)
-    div(tags$iframe(seamless = "seamless", src = path_rv$www, 
-                width = 800, height = 800), style = "text-align: center;")
+    div(tags$iframe(
+      seamless = "seamless", 
+      src = path_rv$www,
+      width = 800, 
+      height = 800
+    ), style = "text-align: center;")
   })
 }
-
-## To be copied in the UI
-# mod_report_ui("report_ui_1")
-
-## To be copied in the server
-# callModule(mod_report_server, "report_ui_1")

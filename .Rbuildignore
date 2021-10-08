@@ -13,3 +13,6 @@
 ^LICENSE\.md$
 ^_pkgdown\.yml$
 ^README\.Rmd$
+^app.R$
+^deploy.R$
+^rsconnect$

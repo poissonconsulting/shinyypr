@@ -19,7 +19,7 @@ test_that("is_try_error", {
 })
 
 test_that("sys_time", {
-  expect_is(sys_time(), "POSIXct")
+  expect_s3_class(sys_time(), "POSIXct")
   expect_identical(attr(sys_time(), "tzone"), "UTC")
 })
 
@@ -68,10 +68,46 @@ test_that("str_extract_all", {
   expect_identical(str_extract_all("a", ".*"), list("a"))
   expect_identical(str_extract_all(c("a", NA), ".*"), list("a", character(0)))
   expect_identical(str_extract_all(c("a", "b"), ".*"), list("a", "b"))
-  expect_identical(str_extract_all(c("aa a", "bbb"), "\\w"), list(c("a", "a", "a"), c("b", "b", "b")))
-  expect_identical(str_extract_all(c("aa a", "bbb"), "\\w\\w"), list("aa", "bb"))
-  expect_identical(str_extract_all(c("aa a", "bbb"), "\\w+"), list(c("aa", "a"), "bbb"))
-  expect_identical(str_extract_all(c("aa a", "bbb"), "\\s\\w+"), list(" a", character(0)))
+  expect_identical(
+    str_extract_all(
+      c("aa a", "bbb"), 
+      "\\w"
+    ), 
+    list(
+      c("a", "a", "a"), 
+      c("b", "b", "b")
+    )
+  )
+  expect_identical(
+    str_extract_all(
+      c("aa a", "bbb"), 
+      "\\w\\w"
+    ), 
+    list(
+      "aa", 
+      "bb"
+    )
+  )
+  expect_identical(
+    str_extract_all(
+      c("aa a", "bbb"), 
+      "\\w+"
+    ), 
+    list(
+      c("aa", "a"), 
+      "bbb"
+    )
+  )
+  expect_identical(
+    str_extract_all(
+      c("aa a", "bbb"), 
+      "\\s\\w+"
+    ), 
+    list(
+      " a", 
+      character(0)
+    )
+  )
 })
 
 test_that("tibble", {
@@ -85,17 +121,29 @@ test_that("tibble", {
 
   expect_identical(
     tibble(data.frame(x = 1)),
-    structure(list(x = 1), class = c("tbl_df", "tbl", "data.frame"), row.names = c(NA, -1L))
+    structure(
+      list(x = 1), 
+      class = c("tbl_df", "tbl", "data.frame"), 
+      row.names = c(NA, -1L)
+    )
   )
 
   expect_identical(
     tibble(x = 1),
-    structure(list(x = 1), class = c("tbl_df", "tbl", "data.frame"), row.names = c(NA, -1L))
+    structure(
+      list(x = 1), 
+      class = c("tbl_df", "tbl", "data.frame"), 
+      row.names = c(NA, -1L)
+    )
   )
 
   expect_identical(
     tibble(x = "1"),
-    structure(list(x = "1"), class = c("tbl_df", "tbl", "data.frame"), row.names = c(NA, -1L))
+    structure(
+      list(x = "1"), 
+      class = c("tbl_df", "tbl", "data.frame"), 
+      row.names = c(NA, -1L)
+    )
   )
 })
 
@@ -150,8 +198,20 @@ test_that("sum2intswrap", {
 
   expect_identical(sum2intswrap(-mx, NA), NA_integer_)
 
-  expect_identical(sum2intswrap(mx, -1:1), c(2147483646L, 2147483647L, -2147483646L))
-  expect_identical(sum2intswrap(-mx, -1:1), c(2147483646L, -2147483647L, -2147483646L))
-  expect_identical(sum2intswrap(mx, c(-1:1, NA)), c(2147483646L, 2147483647L, -2147483646L, NA))
-  expect_identical(sum2intswrap(-mx, c(-1:1, NA)), c(2147483646L, -2147483647L, -2147483646L, NA))
+  expect_identical(
+    sum2intswrap(mx, -1:1), 
+    c(2147483646L, 2147483647L, -2147483646L)
+  )
+  expect_identical(
+    sum2intswrap(-mx, -1:1), 
+    c(2147483646L, -2147483647L, -2147483646L)
+  )
+  expect_identical(
+    sum2intswrap(mx, c(-1:1, NA)), 
+    c(2147483646L, 2147483647L, -2147483646L, NA)
+  )
+  expect_identical(
+    sum2intswrap(-mx, c(-1:1, NA)), 
+    c(2147483646L, -2147483647L, -2147483646L, NA)
+  )
 })
