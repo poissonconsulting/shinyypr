@@ -14,6 +14,6 @@ run_ypr_app <- function(population = NULL) {
 
   shiny::shinyAppDir(
     system.file("app", package = "shinyypr"),
-    options = c("launch.browser" = TRUE)
+    options = list("launch.browser" = TRUE)
   )
 }
