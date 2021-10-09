@@ -11,4 +11,23 @@ release 4.1.1
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 notes
+
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Ayla Pearson <ayla@poissonconsulting.ca>'
+
+New submission
+
+Package was archived on CRAN
+
+Possibly mis-spelled words in DESCRIPTION:
+  ypr (2:12)
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2021-10-06 as email to the maintainer was
+    undeliverable.
+
+The Title field should be in title case. Current version is:
+'Run ypr Shiny App'
+In title case that is:
+'Run Ypr Shiny App'
