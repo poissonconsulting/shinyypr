@@ -1,7 +1,7 @@
 pandoc: 2.7.3
 pkgdown: 1.9000.9000.9000
-pkgdown_sha: 31939caeb87846bc75e0cb5eccc0d610405c4580
+pkgdown_sha: d1a64f28518dc83905c6dc36ce68eeaaa80d3505
 articles:
   shinyypr: shinyypr.html
-last_built: 2021-10-09T15:21Z
+last_built: 2021-10-27T17:40Z
 

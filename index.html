@@ -60,7 +60,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/poissonconsulting/shinyypr/">
+  <a href="https://github.com/poissonconsulting/shinyypr/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -77,30 +77,34 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="shinyypr-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#shinyypr-" class="anchor" aria-hidden="true"></a>shinyypr <img src="reference/figures/logo.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="shinyypr-">shinyypr <img src="reference/figures/logo.png" align="right"><a class="anchor" aria-label="anchor" href="#shinyypr-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <!-- badges: end -->
-<div id="introduction" class="section level2">
-<h2 class="hasAnchor">
-<a href="#introduction" class="anchor" aria-hidden="true"></a>Introduction</h2>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
 <p>shinyypr is an R package that provides a user interface to the <a href="https://github.com/poissonconsulting/ypr" class="external-link">ypr</a> R package. <a href="https://github.com/poissonconsulting/ypr" class="external-link">ypr</a> implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>To install the latest release from <a href="https://cran.r-project.org" class="external-link">CRAN</a></p>
 <p>To install the developmental version from <a href="https://github.com/poissonconsulting/shinyypr" class="external-link">GitHub</a></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"poissonconsulting/shinyypr"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="demonstration" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demonstration" class="anchor" aria-hidden="true"></a>Demonstration</h2>
+<div class="section level2">
+<h2 id="demo-app">Demo App<a class="anchor" aria-label="anchor" href="#demo-app"></a>
+</h2>
+<p><a href="https://poissonconsulting.shinyapps.io/shinyypr/" class="external-link">Demo</a></p>
+</div>
+<div class="section level2">
+<h2 id="how-to-launch-locally">How to Launch Locally<a class="anchor" aria-label="anchor" href="#how-to-launch-locally"></a>
+</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">### run app with default parameter settings</span>
 <span class="fu">shinyypr</span><span class="fu">::</span><span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="op">)</span>
@@ -111,20 +115,20 @@
 <span class="fu">shinyypr</span><span class="fu">::</span><span class="fu"><a href="reference/run_ypr_app.html">run_ypr_app</a></span><span class="op">(</span><span class="va">adams_adjusted</span><span class="op">)</span></code></pre></div>
 <p><code>shinyypr</code> also ships with an RStudio addin.</p>
 </div>
-<div id="information" class="section level2">
-<h2 class="hasAnchor">
-<a href="#information" class="anchor" aria-hidden="true"></a>Information</h2>
+<div class="section level2">
+<h2 id="information">Information<a class="anchor" aria-label="anchor" href="#information"></a>
+</h2>
 <p>For more information see the <code>ypr</code> R package <a href="https://poissonconsulting.github.io/ypr/articles/ypr.html" class="external-link">Get Started</a> vignette.</p>
 </div>
-<div id="contribution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contribution" class="anchor" aria-hidden="true"></a>Contribution</h2>
+<div class="section level2">
+<h2 id="contribution">Contribution<a class="anchor" aria-label="anchor" href="#contribution"></a>
+</h2>
 <p>Please report any <a href="https://github.com/poissonconsulting/shinyypr/issues" class="external-link">issues</a>.</p>
 <p><a href="https://github.com/poissonconsulting/shinyypr/pulls" class="external-link">Pull requests</a> are always welcome.</p>
 </div>
-<div id="code-of-conduct" class="section level2">
-<h2 class="hasAnchor">
-<a href="#code-of-conduct" class="anchor" aria-hidden="true"></a>Code of Conduct</h2>
+<div class="section level2">
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
+</h2>
 <p>Please note that the shinyypr project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -134,12 +138,9 @@
     <div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=shinyypr">https://​cloud.r-project.org/​package=shinyypr</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/poissonconsulting/shinyypr/">https://​github.com/​poissonconsulting/​shinyypr/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/poissonconsulting/shinyypr/issues">https://​github.com/​poissonconsulting/​shinyypr/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=shinyypr" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/poissonconsulting/shinyypr/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/poissonconsulting/shinyypr/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -147,7 +148,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
 
@@ -162,8 +163,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Sebastian Dalgarno <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-3658-4517" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Ayla Pearson <br><small class="roles"> Maintainer, contributor </small> <a href="https://orcid.org/0000-0001-7388-1222" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sebastian Dalgarno <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-3658-4517" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Ayla Pearson <br><small class="roles"> Maintainer, contributor </small> <a href="https://orcid.org/0000-0001-7388-1222" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Poisson Consulting <br><small class="roles"> Copyright holder, funder </small>  </li>
 <li><a href="authors.html">More on authors...</a></li>
 </ul>
