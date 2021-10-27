@@ -40,7 +40,11 @@ install.packages("remotes")
 remotes::install_github("poissonconsulting/shinyypr")
 ```
 
-## Demonstration
+## Demo App 
+
+[Demo](https://poissonconsulting.shinyapps.io/shinyypr/)
+
+## How to Launch Locally
 
 ``` r
 ### run app with default parameter settings
