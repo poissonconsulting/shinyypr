@@ -143,7 +143,7 @@ mod_parameters_server <- function(input, output, session) {
     if (click$state == "select") {
       return({
         x <- datasets[which(datasets$Item == input$selectData), ]$Key
-        eval(parse(text = p0("ypr::", x)))
+        eval(str2lang(p0("ypr::", x)))
       })
     }
     if (click$state == "default") {
