@@ -15,7 +15,7 @@
 # datasets$Title <- as.character(datasets$Title)
 #
 # dropdown_list <- lapply(datasets$Item, function(x) {
-#   y <- eval(str2lang(x))
+#   y <- eval(parse(text = x))
 #   if (class(y) == "ypr_populations") {
 #     return(names(y))
 #   } else {
@@ -25,7 +25,7 @@
 # names(dropdown_list) <- datasets$Title
 #
 # datasets <- map2_dfr(datasets$Item, datasets$Title, function(a, b) {
-#   y <- eval(str2lang(a))
+#   y <- eval(parse(text = a))
 #   if (class(y) == "ypr_populations") {
 #     return(data.frame(Item = names(y), Title = b, Key = paste(a, names(y), sep = "$")))
 #   } else {
