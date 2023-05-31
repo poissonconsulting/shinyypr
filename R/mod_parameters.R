@@ -157,7 +157,7 @@ mod_parameters_server <- function(input, output, session) {
 
   output$uiParam <- renderUI({
     params <- get_defaults()
-    if (class(params) == "NULL") {
+    if (inherits(params, "NULL")) {
       return()
     }
 
