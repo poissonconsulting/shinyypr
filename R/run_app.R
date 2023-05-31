@@ -8,7 +8,7 @@
 #' }
 run_ypr_app <- function(population = NULL) {
   if (!is.null(population)) {
-    chk_population(population, parameters)
+    check_population(population)
   }
   shinyOptions(population = population)
 

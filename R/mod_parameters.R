@@ -207,7 +207,7 @@ mod_parameters_server <- function(input, output, session) {
   check_population <- reactive({
     req(get_population())
     data <- get_population()
-    x <- try(chk_population(data), silent = TRUE)
+    x <- try(check_population(data), silent = TRUE)
     if (inherits(x, "try-error")) {
       return(gsub("Error : ", "", x))
     }

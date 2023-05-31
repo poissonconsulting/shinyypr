@@ -24,9 +24,5 @@ test_that("file upload checks work", {
   )
   testthat::expect_identical(chk_colnames(x), x)
 
-  expect_identical(chk_population(ypr::adams_bt_03), ypr::adams_bt_03)
-  expect_error(chk_parameters(tmax = 1.5),
-    "`tmax` must inherit from S3 class 'integer'.",
-    class = "chk_error"
-  )
+  expect_identical(check_population(ypr::adams_bt_03), ypr::adams_bt_03)
 })
