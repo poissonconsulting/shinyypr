@@ -164,8 +164,8 @@ mod_parameters_server <- function(input, output, session) {
     params <- ypr::ypr_tabulate_parameters(params)
 
     attributes <- dplyr::left_join(attributes, params, "Parameter") %>%
-      dplyr::mutate_if(is.factor, as.character) %>%
-      dplyr::mutate(Importance = factor(Importance, levels = c("Fundamental", "Advanced", "Scaling")))
+      dplyr::mutate_if(is.factor, as.character)
+    attributes$Importance <- factor(attributes$Importance, levels = c("Fundamental", "Advanced", "Scaling"))
     attributes$Description <- NULL
 
     attributes$subgroup <- attributes$Importance
