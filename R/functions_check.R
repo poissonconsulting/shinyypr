@@ -31,7 +31,7 @@ chk_population <- function(x, x_name = NULL) {
 
 chk_parameters <- function(tmax, k, Linf, t0, k2, Linf2, L2, Wb, Ls, Sp, es,
                            tR, Rk, BH, fb, n, nL, Ln, Sm, pi, Lv, Vp, Llo, Lup, 
-                           rho, Hm, Nc, Wa, fa, Rmax, q) {
+                           rho, Hm, Nc, Wa, fa, Rmax, q, RPR) {
   chk_s3_class(tmax, "integer")
   chk_scalar(tmax)
   chk_not_any_na(tmax)
@@ -156,4 +156,8 @@ chk_parameters <- function(tmax, k, Linf, t0, k2, Linf2, L2, Wb, Ls, Sp, es,
   chk_scalar(q)
   chk_not_any_na(q)
   chk_range(q, c(0, 1))
+  chk_s3_class(RPR, "numeric")
+  chk_scalar(RPR)
+  chk_not_any_na(RPR)
+  chk_range(RPR, c(0, 1))
 }
