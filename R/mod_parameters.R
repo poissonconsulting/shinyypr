@@ -157,7 +157,7 @@ mod_parameters_server <- function(input, output, session) {
 
   output$uiParam <- renderUI({
     params <- get_defaults()
-    if (class(params) == "NULL") {
+    if (inherits(params, "NULL")) {
       return()
     }
 
@@ -165,6 +165,7 @@ mod_parameters_server <- function(input, output, session) {
 
     attributes <- dplyr::left_join(attributes, params, "Parameter") %>%
       dplyr::mutate_if(is.factor, as.character)
+    attributes$Importance <- factor(attributes$Importance, levels = c("Fundamental", "Advanced", "Scaling"))
     attributes$Description <- NULL
 
     attributes$subgroup <- attributes$Importance
@@ -207,7 +208,7 @@ mod_parameters_server <- function(input, output, session) {
   check_population <- reactive({
     req(get_population())
     data <- get_population()
-    x <- try(chk_population(data), silent = TRUE)
+    x <- try(check_population(data), silent = TRUE)
     if (inherits(x, "try-error")) {
       return(gsub("Error : ", "", x))
     }

@@ -6,7 +6,7 @@
 \alias{shinyypr-package}
 \title{shinyypr: Run ypr Shiny App}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 A user interface to the 'ypr' R package. 'Ypr' implements equilibrium-based yield per recruit methods for estimating the optimal yield for a fish population.
 }
