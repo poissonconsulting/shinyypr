@@ -1,19 +1,19 @@
 # library(ypr)
 # library(purrr)
-#
+# 
 # params <- ypr::ypr_population()
 # parameters <- names(params)
 # attributes <- ypr:::.parameters
 # template <- ypr_tabulate_parameters(ypr_population())
 # schedule <- ypr::ypr_schedule(ypr_population())
-#
+# 
 # desc <- template[, c("Parameter", "Description")]
-#
+# 
 # datasets <- data(package = "ypr")$results[, c("Item", "Title")] %>%
 #   as.data.frame()
 # datasets$Item <- as.character(datasets$Item)
 # datasets$Title <- as.character(datasets$Title)
-#
+# 
 # dropdown_list <- lapply(datasets$Item, function(x) {
 #   y <- eval(str2lang(x))
 #   if (class(y) == "ypr_populations") {
@@ -23,7 +23,7 @@
 #   }
 # })
 # names(dropdown_list) <- datasets$Title
-#
+# 
 # datasets <- map2_dfr(datasets$Item, datasets$Title, function(a, b) {
 #   y <- eval(str2lang(a))
 #   if (class(y) == "ypr_populations") {
@@ -32,10 +32,10 @@
 #     return(data.frame(Item = a, Title = b, Key = a))
 #   }
 # })
-#
+# 
 # fish.y <- c("Survivors", "Spawners", "Caught", "Harvested", "Released", "HandlingMortalities")
 # fish.x <- c("Age", "Length", "Weight")
-#
+# 
 # usethis::use_data(parameters, params, attributes, template, desc, schedule,
 #   dropdown_list, datasets, fish.x, fish.y,
 #   internal = TRUE, overwrite = TRUE
