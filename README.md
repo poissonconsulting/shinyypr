@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # shinyypr <img src="man/figures/logo.png" align="right" />
@@ -33,22 +32,18 @@ To install the latest release from [CRAN](https://cran.r-project.org)
 To install the developmental version from
 [GitHub](https://github.com/poissonconsulting/shinyypr)
 
-``` r
-install.packages("remotes")
-remotes::install_github("poissonconsulting/shinyypr")
-```
+    install.packages("remotes")
+    remotes::install_github("poissonconsulting/shinyypr")
 
 ## Demonstration
 
-``` r
-### run app with default parameter settings
-shinyypr::run_ypr_app()
+    ### run app with default parameter settings
+    shinyypr::run_ypr_app()
 
-### provide parameter settings by passing a ypr_population object to the run_ypr_app function
-adams <- ypr::adams_bt_03
-adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
-shinyypr::run_ypr_app(adams_adjusted)
-```
+    ### provide parameter settings by passing a ypr_population object to the run_ypr_app function
+    adams <- ypr::adams_bt_03
+    adams_adjusted <- ypr::ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
+    shinyypr::run_ypr_app(adams_adjusted)
 
 `shinyypr` also ships with an RStudio addin.
 
