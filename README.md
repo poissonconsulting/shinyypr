@@ -7,17 +7,15 @@
 
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R build
-status](https://github.com/poissonconsulting/shinyypr/workflows/R-CMD-check/badge.svg)](https://github.com/poissonconsulting/shinyypr/actions)
+[![R-CMD-check](https://github.com/poissonconsulting/shinyypr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/poissonconsulting/shinyypr/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/poissonconsulting/shinyypr/branch/master/graph/badge.svg)](https://codecov.io/gh/poissonconsulting/shinyypr?branch=master)
+coverage](https://codecov.io/gh/poissonconsulting/shinyypr/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/shinyypr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 <!-- [![Tinyverse status](https://tinyverse.netlify.com/badge/shinyypr)](https://CRAN.R-project.org/package=shinyypr) -->
 [![CRAN
 status](https://www.r-pkg.org/badges/version/shinyypr)](https://cran.r-project.org/package=shinyypr)
 ![CRAN downloads](https://cranlogs.r-pkg.org/badges/shinyypr)
-
 <!-- badges: end -->
 
 ## Introduction
@@ -40,11 +38,7 @@ install.packages("remotes")
 remotes::install_github("poissonconsulting/shinyypr")
 ```
 
-## Demo App 
-
-[Demo](https://poissonconsulting.shinyapps.io/shinyypr/)
-
-## How to Launch Locally
+## Demonstration
 
 ``` r
 ### run app with default parameter settings
