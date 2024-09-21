@@ -60,11 +60,11 @@ app_ui <- function() {
             )
           )
         )
-      ),
-      tabPanel(
-        "Report",
-        mod_report_ui("report_ui_1")
       )
+      # tabPanel(
+      #   "Report",
+      #   mod_report_ui("report_ui_1")
+      # )
     )
   )
 }

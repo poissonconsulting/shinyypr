@@ -33,7 +33,7 @@ param_ui <- function(attributes, ns) {
       bsplus::use_bs_tooltip(),
       purrr::map(subgroups, function(x) {
         fluidRow(
-          div(HTML(unique(x$subgroup)), class = "param-title"),
+          div(HTML(as.character(unique(x$subgroup))), class = "param-title"),
           splitLayout2(purrr::pmap(
             list(
               x$Parameter, x$Lower, x$Upper,
