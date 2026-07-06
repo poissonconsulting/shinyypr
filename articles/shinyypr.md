@@ -1,0 +1,34 @@
+# Using shinyypr
+
+`shinyypr` is an R package to run a user interface to the
+[ypr](https://github.com/poissonconsulting/ypr) R package.
+[ypr](https://github.com/poissonconsulting/ypr) implements
+equilibrium-based yield per recruit methods for estimating the optimal
+yield for a fish population.
+
+The user interface can simply be opened with default parameter settings.
+
+``` r
+
+library(shinyypr)
+run_ypr_app()
+```
+
+The `run_ypr_app` function also has a single argument that allows the
+user to pass a valid ypr_population object, which populates the app
+parameter values on startup.
+
+``` r
+
+library(ypr)
+library(shinyypr)
+adams <- adams_bt_03
+adams_adjusted <- ypr_population_update(adams, "Rk" = 5, "Linf" = 140)
+run_ypr_app(adams_adjusted)
+```
+
+`shinyypr` also ships with an RStudio addin.
+
+For more information see the `ypr` R package [Get
+Started](https://poissonconsulting.github.io/ypr/articles/ypr.html)
+vignette.
